@@ -21,10 +21,7 @@ const Layout = ({ children }) => {
         siteTitle={data.site.siteMetadata.title}
       />
       <main
-        className="ml-200px lg:ml-280px min-h-screen"
-        style={{
-          padding: '120px 30px',
-        }}
+        className="md:ml-260px lg:ml-280px min-h-screen flex justify-center overflow-y-auto"
       >
         {children}
       </main>

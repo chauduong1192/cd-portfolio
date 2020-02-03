@@ -7,32 +7,8 @@ const menuData = [
     to: '/'
   },
   {
-    name: 'home',
-    to: '/2'
-  },
-  {
-    name: 'home',
-    to: '/3'
-  },
-  {
-    name: 'home',
-    to: '/4'
-  },
-  {
-    name: 'home',
-    to: '/4'
-  },
-  {
-    name: 'home',
-    to: '/4'
-  },
-  {
-    name: 'home',
-    to: '/4'
-  },
-  {
-    name: 'home',
-    to: '/4'
+    name: 'Touch me',
+    to: '/touch-me'
   },
 ];
 

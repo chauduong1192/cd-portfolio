@@ -256,6 +256,15 @@ module.exports = {
         '"Courier New"',
         'monospace',
       ],
+      rubik: [
+        'Rubik',
+        'Arial',
+        'sans-serif'
+      ],
+      roboto: [
+        'Roboto Mono',
+        'monospace'
+      ]
     },
     fontSize: {
       xs: '0.75rem',
@@ -311,6 +320,7 @@ module.exports = {
       none: 'none',
       disc: 'disc',
       decimal: 'decimal',
+      square: 'square',
     },
     margin: (theme, { negative }) => ({
       auto: 'auto',

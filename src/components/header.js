@@ -1,35 +1,35 @@
-import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
+import { Link } from "gatsby"
 
-const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
+import Footer from './Footer';
+import Menu from './Menu';
+
+const Header = ({ siteTitle }) => {
+
+  return(
+    <header
+      className="p-8 bottom-0 left-0 top-0 flex flex-col justify-between fixed z-500-cd bg-white w-200px lg:w-280px"
     >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
+      <div style={{ flex: '0 0 25%' }}>
+        <Link className="mb-4 block" to="/">
+          <h1 className="text-3xl text-black-25x3 uppercase">chau duong</h1>
         </Link>
-      </h1>
-    </div>
-  </header>
-)
+        <p className="text-sm-cd leading-relaxed">Front-end developer</p>
+        <p className="text-sm-cd leading-relaxed">React, React Native developer</p>
+      </div>
+      <div className="flex flex-col justify-center" style={{ flex: '0 0 50%' }}>
+        <Menu />
+      </div>
+      <div
+        className="justify-end flex flex-col text-sm-cd "
+        style={{ flex: '0 0 25%' }}
+      >
+        <Footer />
+      </div>
+    </header>
+  );
+}
 
 Header.propTypes = {
   siteTitle: PropTypes.string,

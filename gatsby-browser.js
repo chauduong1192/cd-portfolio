@@ -5,3 +5,8 @@
  */
 
 // You can delete this file if you're not using it
+
+//gatsby-browser.js
+
+import "./src/styles/globals.css"
+import "./src/styles/fonts.css"

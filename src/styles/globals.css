@@ -9,8 +9,14 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizelegibility;
+  scroll-behavior: smooth;
 }
 body {
   color: rgb(105, 105, 105);
   background: rgb(211, 211, 211);
+}
+
+.go-to-top:hover {
+  bottom: 44px;
+  right: 12px;
 }

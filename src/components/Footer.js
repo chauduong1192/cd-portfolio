@@ -32,6 +32,7 @@ const Footer = () => {
           className="cursor-pointer"
           href={footer.url}
           target="_blank"
+          rel="noopener noreferrer"
         >
           {footer.icon}
         </a>

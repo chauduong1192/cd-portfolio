@@ -20,7 +20,7 @@ const GoToTop = () =>
       focus:outline-none
     "
     style={{
-      right: 32,
+      right: 24,
       bottom: 40,
       background: '#212121',
       opacity: '.5',

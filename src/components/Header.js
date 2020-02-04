@@ -1,11 +1,10 @@
-import PropTypes from "prop-types"
 import React, { useState } from "react"
 import { Link } from "gatsby"
 
 import Footer from './Footer';
 import Menu from './Menu';
 
-const Header = ({ siteTitle }) => {
+const Header = () => {
   const [isShowMenu, setShowMenu] = useState(false);
 
   const renderHeaderMobile = () => {
@@ -90,14 +89,6 @@ const Header = ({ siteTitle }) => {
       {isShowMenu && renderMenuMobile()}
     </>
   );
-}
-
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
-Header.defaultProps = {
-  siteTitle: ``,
 }
 
 export default Header

@@ -42,7 +42,7 @@ const Footer = () => {
 
   return(
     <>
-      <p className="mb-4">Contact me for business at <a href="mailto:chau.duong1192@gmail.com"><span className="text-black-52x3">chau.duong1192@gmail.com</span></a></p>
+      <h4 className="mb-4">Contact me for business at <a href="mailto:chau.duong1192@gmail.com"><span className="text-black-52x3">chau.duong1192@gmail.com</span></a></h4>
       <ul className="flex flex-row">
         {renderItemFooter()}
       </ul>

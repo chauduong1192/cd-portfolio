@@ -41,9 +41,9 @@ const IndexPage = () => {
             >
               HI!
             </div>
-            <div className="sm:text-xl mb-4 sm:mb-6">
+            <h3 className="sm:text-xl mb-4 sm:mb-6">
               {site.siteMetadata.description}
-            </div>
+            </h3>
             <div>
               <div className="text-xl sm:text-2xl text-black-52x3 underline font-medium mb-3 sm:mb-4">
                 Last Skills

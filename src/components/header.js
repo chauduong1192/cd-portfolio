@@ -7,6 +7,16 @@ import Menu from './Menu';
 const Header = () => {
   const [isShowMenu, setShowMenu] = useState(false);
 
+  const onGoShowMenu = () => {
+    if(!isShowMenu) {
+      document.querySelector('body').style = 'overflow: hidden';
+    } else {
+      document.querySelector('body').style = '';
+    }
+    
+    setShowMenu(!isShowMenu);
+  }
+
   const renderHeaderMobile = () => {
     return(
       <div
@@ -33,7 +43,7 @@ const Header = () => {
       >
         <button
           className="text-black-52x3 font-rukib cursor-pointer focus:outline-none"
-          onClick={()=> setShowMenu(!isShowMenu)}>Menu</button>
+          onClick={onGoShowMenu}>Menu</button>
         <div className="text-black-52x3 font-rukib font-medium text-xl uppercase">
           <Link className="cursor-pointer" to="/">chau duong</Link>
         </div>
@@ -76,8 +86,11 @@ const Header = () => {
       <menu className="
       items-center bg-white bottom-0
       flex flex-col justify-center
-      left-0 fixed right-0 text-center top-0 z-50 sm:hidden">
+      left-0 fixed right-0 text-center top-0 z-50 sm:hidden m-0 p-0">
         <Menu />
+        <div className="absolute flex justify-center items-center flex-col" style={{ bottom: 14 }}>
+          <Footer />
+        </div>
       </menu>
     );
   }

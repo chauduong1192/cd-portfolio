@@ -7,6 +7,11 @@ const menuData = [
     to: '/'
   },
   {
+    name: 'Download CV',
+    href: require('../static/CHAUDUONG-CV.pdf'),
+    download: true,
+  },
+  {
     name: 'Contact',
     to: '/',
     href: 'mailto:chau.duong1192@gmail.com'
@@ -37,7 +42,7 @@ const Menu = () => {
     return menuData.map((menu, idx) => 
       <li key={idx} className="my-2">
         {menu.href ? 
-          <a className={commonStyle} href={menu.href}>{menu.name}</a> :
+          <a className={commonStyle} href={menu.href} {...menu}>{menu.name}</a> :
           <Link
             to={menu.to}
             href={menu.href}

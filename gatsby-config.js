@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: 'Chau Duong Portfolio',
-    description: 'will add later',
+    description: `I am a front-end web developer. I do not only hope I have challenges to become a full-stack developer but also I am trying to learn new skills every day, new technologies to meet my career path.`,
     author: 'chau duong',
   },
   plugins: [

@@ -85,7 +85,7 @@ const IndexPage = () => {
                               <div className="text-black-52x3 inline uppercase">
                                 {child.projectName}
                               </div>
-                            }: {child.desc}
+                            }<>{child.projectName && ':'}</> {child.desc}
                           </li>
                         )}
                       </ul>

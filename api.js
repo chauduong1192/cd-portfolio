@@ -7,19 +7,30 @@ export const lastSkills = [
 
 export const workExperience = [
   {
-    duration: 'May 2018 - Now',
+    duration: 'Otc 2019 - Apr 2019',
+    company: 'ShelterApp - Freelancer',
+    companyUrl: 'https://shelterapp.org/',
+    role: 'React native Developer',
+    experience: [
+      {
+        desc: 'Working with the backend team to build a small app that helps homeless and low-income families connect to services using the web and mobile apps where they can find Food, Shelter, Health, Work and other resources.'
+      },
+    ]
+  },
+  {
+    duration: 'May 2018 - Feb 2020',
     company: 'Leflair Vietnam and Philippines',
     companyUrl: 'https://www.leflair.vn/vn/',
     role: 'Senior Front-end Developer',
     experience: [
       {
         projectName: 'leflair.vn',
-        url: 'https://www.leflair.vn/vn/',
+        // url: 'https://www.leflair.vn/vn/',
         desc: 'My responsibility at Leflair in first 4 months is build up the new main website based on new technologies as NextJs (server side rendering by using Express), react, redux, sass, style-jsx, PWA...'
       },
       {
         projectName: 'promotion-page',
-        url: 'https://pages.leflair.vn/promotions',
+        // url: 'https://pages.leflair.vn/promotions',
         desc: 'Maintenance and develop new features, new campaigns, new vouchers for this page.'
       },
       {

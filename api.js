@@ -7,6 +7,13 @@ export const lastSkills = [
 
 export const workExperience = [
   {
+    duration: 'Mar 2020 - Now',
+    company: 'TymeDigital',
+    companyUrl: 'https://digital.tyme.com/about-us/',
+    role: 'Software Engineering',
+    experience: []
+  },
+  {
     duration: 'Otc 2019 - Apr 2019',
     company: 'ShelterApp - Freelancer',
     companyUrl: 'https://shelterapp.org/',

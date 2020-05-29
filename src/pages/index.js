@@ -62,14 +62,26 @@ const IndexPage = () => {
               </div>
               <div className="wrap">
                 {workExperience.map((ex, idx) => {
-                  const { duration, company, companyUrl, role, experience} = ex;
+                  const { duration, company, companyUrl, role, experience, logo } = ex;
                   return(
                     <div key={idx} className="mb-5">
-                      <div className="text-black-52x3 font-medium">{duration}</div>  
+                      <div className={`text-black-52x3 font-medium flex items-end ${logo ? 'mb-2' : ''}`}>
+                        {logo && <img class="w-10" alt={company} src={logo} />}
+                        {
+                          companyUrl ?
+                          <a
+                            className={logo ? 'leading-none ml-2 text-lg' : ''}
+                            href={companyUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >{company}</a> :
+                          company
+                        }
+                      </div>  
                       <div className="font-normal text-black-52x3">
-                        {companyUrl ? <a href={companyUrl} target="_blank" rel="noopener noreferrer">{company}</a> : company}
+                        {role}
                       </div>
-                      <div className="font-normal text-black-52x3">{role}</div>
+                      <div className="font-normal text-black-52x3 opacity-75">{duration}</div>
                       <ul className="list-square ml-8 mt-2">
                         {experience.map((child, idx) => 
                           <li key={idx}>

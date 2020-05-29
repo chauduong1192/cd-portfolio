@@ -1,23 +1,33 @@
+import * as dayjs from 'dayjs'
+import * as relativeTime from 'dayjs/plugin/relativeTime'
+
+import tymeLogo from "./src/images/tyme.jpg";
+import leflairLogo from "./src/images/leflair.png";
+import gorillabLogo from "./src/images/gorillab.png";
+
+dayjs.extend(relativeTime)
+
 export const lastSkills = [
   'React, React Native, Redux, NextJs, GastbyJs, TypeScript, Webpack, Babel, Tslint, Workbox.',
-  'Style-JSX, CSS in js, Bootstrap, TailwindCSS, SASS.',
-  'SEO audits, site performance, marketing intergrations(Google Analytics, RTB-house, Aimtell, FB Pixel, ...).',
-  'GIT, Yarn, VSCode, Xcode, Android Studio, Trello, Jira, Sketch.',
+  'Style-JSX, CSS in js, Styled-components, Bootstrap, TailwindCSS, SASS.',
+  'SEO audits, site performance, marketing intergrations(GTM, GA, RTB-house, Aimtell, FB Pixel, ...).',
+  'GIT, Yarn, VSCode, Xcode, Android Studio, Trello, Jira, Sketch, Figma.',
 ];
 
 export const workExperience = [
   {
-    duration: 'Mar 2020 - Now',
-    company: 'TymeDigital',
-    companyUrl: 'https://digital.tyme.com/about-us/',
+    duration: `Mar 2020 - Now · ${dayjs().from(dayjs('Mar 2020'), true)}`,
+    company: 'TymeGlobal',
+    companyUrl: 'https://www.linkedin.com/company/tymeglobal/',
     role: 'Software Engineering',
+    logo: tymeLogo,
     experience: []
   },
   {
-    duration: 'Otc 2019 - Apr 2019',
+    duration: `Otc 2019 - Apr 2020 · ${dayjs('Otc 2019').from(dayjs('Apr 2020'), true)}`,
     company: 'ShelterApp - Freelancer',
     companyUrl: 'https://shelterapp.org/',
-    role: 'React native Developer',
+    role: 'React Native Developer',
     experience: [
       {
         desc: 'Working with the backend team to build a small app that helps homeless and low-income families connect to services using the web and mobile apps where they can find Food, Shelter, Health, Work and other resources.'
@@ -25,10 +35,11 @@ export const workExperience = [
     ]
   },
   {
-    duration: 'May 2018 - Feb 2020',
-    company: 'Leflair Vietnam and Philippines',
-    companyUrl: 'https://www.leflair.vn/vn/',
+    duration: `May 2018 - Feb 2020 · ${dayjs('May 2018').from(dayjs('Feb 2020'), true)}`,
+    company: 'Leflair',
+    companyUrl: 'https://www.linkedin.com/company/leflair/',
     role: 'Senior Front-end Developer',
+    logo: leflairLogo,
     experience: [
       {
         projectName: 'leflair.vn',
@@ -53,10 +64,11 @@ export const workExperience = [
     ]
   },
   {
-    duration: 'Apr 2015 - Apr 2019',
-    company: 'Freelancer Team - Gorillab',
+    duration: `Apr 2015 - Apr 2019 · ${dayjs('Apr 2015').from(dayjs('Apr 2019'), true)}`,
+    company: 'Gorillab - Freelancer Team',
     companyUrl: 'https://www.facebook.com/gorillab.co',
     role: 'Senior Front-end Developer',
+    logo: gorillabLogo,
     experience: [
       {
         projectName: 'topon.tech',
@@ -84,10 +96,10 @@ export const workExperience = [
     ]
   },
   {
-    duration: 'Apr 2015 - May 2018',
+    duration: `Apr 2015 - May 2018 · ${dayjs('Apr 2015').from(dayjs('May 2018'), true)}`,
     company: 'Softfoundry Company',
     companyUrl: 'http://www.softfoundry.com/',
-    role: 'Front-end Developer',
+    role: 'Junior Front-end Developer',
     experience: [
       {
         projectName: 'vmeet web service',
@@ -112,7 +124,7 @@ export const workExperience = [
     ]
   },
   {
-    duration: 'Jul 2014 - Apr 2015',
+    duration: `Jul 2014 - Apr 2015 · ${dayjs('Jul 2014').from(dayjs('Apr 2015'), true)}`,
     company: 'HuyenTanLion Company',
     role: 'Front-end Developer',
     experience: [

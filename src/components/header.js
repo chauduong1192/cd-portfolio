@@ -65,8 +65,8 @@ const Header = () => {
           <Link className="mb-4 block" to="/">
             <h1 className="text-3xl text-black-25x3 uppercase">chau duong</h1>
           </Link>
-          <h2 className="text-sm-cd leading-relaxed">Front-end developer</h2>
-          <h2 className="text-sm-cd leading-relaxed">React, React Native developer</h2>
+          <h2 className="text-sm-cd leading-relaxed">Senior Front-end Developer</h2>
+          <h2 className="text-sm-cd leading-relaxed">React, React Native Developer</h2>
         </div>
         <div className="flex flex-col justify-center" style={{ flex: '0 0 50%' }}>
           <Menu />

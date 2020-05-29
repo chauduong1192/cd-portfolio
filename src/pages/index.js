@@ -1,7 +1,7 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
-import Layout from "../components/Layout"
+import Layout from "../components/Layout_"
 import SEO from "../components/SEO"
 import { lastSkills, workExperience } from '../../api';
 

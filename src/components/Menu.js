@@ -1,5 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
+import styled from "styled-components"
 
 const menuData = [
   {
@@ -36,24 +37,24 @@ const commonStyle= `
   cursor-pointer
 `;
 
+const LinkContainer = styled(Link)`
+  transition: border-color 0.3s ease 0s, color 0.3s ease 0s;
+`;
+
 const Menu = () => {
 
   const renderItemMenu = () => {
     return menuData.map((menu, idx) => 
-      <li key={idx} className="my-2">
+      <li key={idx} className="my-2 md:first:block first:hidden">
         {menu.href ? 
           <a className={commonStyle} href={menu.href} {...menu}>{menu.name}</a> :
-          <Link
+          <LinkContainer
             to={menu.to}
             href={menu.href}
             className={commonStyle}
-            activeClassName="text-black-52x3 opacity-100"
-            style={{
-              transition: 'border-color 0.3s ease 0s, color 0.3s ease 0s',
-            }}
-            >
+            activeClassName="text-black-52x3 opacity-100">
               {menu.name}
-          </Link>
+          </LinkContainer>
         }
       </li>
     );

@@ -66,7 +66,7 @@ const IndexPage = () => {
                   return(
                     <div key={idx} className="mb-5">
                       <div className={`text-black-52x3 font-medium flex items-end ${logo ? 'mb-2' : ''}`}>
-                        {logo && <img class="w-10" alt={company} src={logo} />}
+                        {logo && <img className="w-10" alt={company} src={logo} />}
                         {
                           companyUrl ?
                           <a

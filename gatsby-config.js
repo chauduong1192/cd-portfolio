@@ -44,5 +44,11 @@ module.exports = {
         postCssPlugins: [require("autoprefixer")],
       },
     },
+    {
+      resolve: `gatsby-plugin-styled-components`,
+      options: {
+        displayName: false
+      },
+    },
   ],
 }

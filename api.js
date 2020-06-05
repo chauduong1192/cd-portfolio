@@ -7,11 +7,12 @@ import gorillabLogo from "./src/images/gorillab.png";
 
 dayjs.extend(relativeTime)
 
-export const lastSkills = [
+export const skills = [
   'React, React Native, Redux, NextJs, GastbyJs, TypeScript, Webpack, Babel, Tslint, Workbox.',
-  'Style-JSX, CSS in js, Styled-components, Bootstrap, TailwindCSS, SASS.',
+  'Style-JSX, Styled-components, Bootstrap, TailwindCSS, SASS.',
   'SEO audits, site performance, marketing intergrations(GTM, GA, RTB-house, Aimtell, FB Pixel, ...).',
-  'GIT, Yarn, VSCode, Xcode, Android Studio, Trello, Jira, Sketch, Figma.',
+  'GIT, Yarn, NPM, VSCode, Xcode, Android Studio, Trello, Jira, Sketch, Figma.',
+  'Digital Ocean, Netlify, Heroku, Vercel, Surge.',
 ];
 
 export const workExperience = [

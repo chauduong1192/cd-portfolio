@@ -1,9 +1,19 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
+import styled from 'styled-components';
 
 import Layout from "../components/Layout_"
 import SEO from "../components/SEO"
-import { lastSkills, workExperience } from '../../api';
+import { skills, workExperience } from '../../api';
+
+const IndexContainer = styled.div`
+  max-height: 580px;
+`;
+
+const HelloWord = styled.div`
+  letter-spacing: -0.04em;
+  line-height: 1.4em;
+`;
 
 const IndexPage = () => {
   const { site } = useStaticQuery(
@@ -26,31 +36,22 @@ const IndexPage = () => {
       <div
         className="py-0 px-4 mx-0  my-16 sm:px-12.5 sm:my-12.5"
       >
-        <div style={{
-          maxHeight: 580,
-        }}
-        className="text-base"
-        >
+        <IndexContainer className="text-base">
           <div className="mb-8">
-            <div
-              className="text-black-52x3 font-medium mb-3 sm:mb-6 font-roboto text-2xl sm:text-4xl"
-              style={{
-                letterSpacing: '-0.04em',
-                lineHeight: '1.4em',
-              }}
-            >
+            <HelloWord
+              className="text-black-52x3 font-medium mb-3 sm:mb-6 font-roboto text-2xl sm:text-4xl">
               HI!
-            </div>
+            </HelloWord>
             <h3 className="sm:text-xl mb-4 sm:mb-6">
               {site.siteMetadata.description}
             </h3>
             <div>
               <div className="text-xl sm:text-2xl text-black-52x3 underline font-medium mb-3 sm:mb-4">
-                Last Skills
+                Skills
               </div>
               <div>
                 <ul className="list-square ml-8">
-                  {lastSkills.map((skill, idx) => 
+                  {skills.map((skill, idx) => 
                     <li key={idx}>{skill}</li>  
                   )}
                 </ul>
@@ -142,7 +143,7 @@ const IndexPage = () => {
             </div>
           </div>
           <div></div>
-        </div>
+        </IndexContainer>
       </div>
     </Layout> 
   );

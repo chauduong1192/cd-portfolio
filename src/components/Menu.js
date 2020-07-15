@@ -7,11 +7,11 @@ const menuData = [
     name: 'About me',
     to: '/'
   },
-  {
-    name: 'Download CV',
-    href: require('../static/CHAUDUONG-CV.pdf'),
-    download: true,
-  },
+  // {
+  //   name: 'Download CV',
+  //   href: require('../static/CHAUDUONG-CV.pdf'),
+  //   download: true,
+  // },
   {
     name: 'Contact',
     to: '/',

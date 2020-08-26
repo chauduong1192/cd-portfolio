@@ -12,6 +12,10 @@ const menuData = [
   //   href: require('../static/CHAUDUONG-CV.pdf'),
   //   download: true,
   // },
+  // {
+  //   name: 'GitHub Repos',
+  //   to: '/github-repos',
+  // },
   {
     name: 'Contact',
     to: '/',

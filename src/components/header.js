@@ -2,8 +2,8 @@ import React, { useState } from "react"
 import { Link } from "gatsby"
 import styled from 'styled-components'
 
-import Footer from './Footer';
-import Menu from './Menu';
+import Footer from './footer';
+import Menu from './menu';
 
 const HeaderMobile = styled.div`
   box-shadow: ${props => !props.isShowMenu ? 'rgba(0, 0, 0, 0.07) 0px 5px 0px' : 'none'};
@@ -31,11 +31,11 @@ const Header = () => {
   const [isShowMenu, setShowMenu] = useState(false);
 
   const onGoShowMenu = () => {
-    if(!isShowMenu) {
-      document.querySelector('body').style = 'overflow: hidden';
-    } else {
-      document.querySelector('body').style = '';
-    }
+    // if(!isShowMenu) {
+    //   document.querySelector('body').style = 'overflow: hidden';
+    // } else {
+    //   document.querySelector('body').style = '';
+    // }
     
     setShowMenu(!isShowMenu);
   }

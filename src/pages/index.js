@@ -2,8 +2,10 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import styled from 'styled-components';
 
-import Layout from "../components/Layout_"
-import SEO from "../components/SEO"
+import Layout from "../components/layout"
+import SEO from "../components/seo"
+import Container from "../components/container"
+
 import { skills, workExperience } from '../../api';
 
 const IndexContainer = styled.div`
@@ -33,9 +35,7 @@ const IndexPage = () => {
   return(
     <Layout>
       <SEO title="Anything from me" />
-      <div
-        className="py-0 px-4 mx-0  my-16 sm:px-12.5 sm:my-12.5"
-      >
+      <Container>
         <IndexContainer className="text-base">
           <div className="mb-8">
             <HelloWord
@@ -144,7 +144,7 @@ const IndexPage = () => {
           </div>
           <div></div>
         </IndexContainer>
-      </div>
+      </Container>
     </Layout> 
   );
 }

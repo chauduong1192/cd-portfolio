@@ -17,6 +17,7 @@ module.exports = {
       'gray-105x3': '#696969',
       black: '#000',
       white: '#fff',
+      primary: '#d3d3d3',
 
       gray: {
         100: '#f7fafc',
@@ -477,7 +478,7 @@ module.exports = {
     lineHeight: ['responsive'],
     listStylePosition: ['responsive'],
     listStyleType: ['responsive'],
-    margin: ['responsive'],
+    margin: ['responsive, last'],
     maxHeight: ['responsive'],
     maxWidth: ['responsive'],
     minHeight: ['responsive'],

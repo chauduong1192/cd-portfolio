@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import { Link } from "gatsby"
 import styled from 'styled-components'
 
-import Footer from './footer';
+import Footer from './footerB';
 import Menu from './menu-left';
 
 const HeaderMobile = styled.div`

@@ -1,8 +1,8 @@
 import React, { useEffect, useState, useRef } from "react";
 import PropTypes from "prop-types";
 
-import Header from "./Header_"
-import GoToTop from "./GoToTop"
+import Header from "./header"
+import GoToTop from "./go-to-top"
 
 const Layout = ({ children }) => {
   const [isShowGoToTop, setShowGoToTop] = useState(false);
@@ -13,10 +13,12 @@ const Layout = ({ children }) => {
       return;
     }
 
-    const currentStatus = ref.current;
-    const heightOfScreen = (currentStatus.clientHeight / 2) * -1;
-
-    setShowGoToTop(currentStatus.getBoundingClientRect().top <= heightOfScreen);
+    const currentStatus = ref && ref.current;
+    
+    if(currentStatus) {
+      const heightOfScreen = (currentStatus.clientHeight / 2) * -1;
+      setShowGoToTop(currentStatus.getBoundingClientRect().top <= heightOfScreen);
+    }
   };
 
   useEffect(() => {

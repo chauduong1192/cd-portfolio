@@ -13,6 +13,10 @@ const menuData = [
   //   download: true,
   // },
   {
+    name: 'GitHub Repos',
+    to: '/github-repos',
+  },
+  {
     name: 'Contact',
     to: '/',
     href: 'mailto:chau.duong1192@gmail.com'
@@ -45,7 +49,7 @@ const Menu = () => {
 
   const renderItemMenu = () => {
     return menuData.map((menu, idx) => 
-      <li key={idx} className="my-2 md:first:block first:hidden">
+      <li key={idx} className="my-2">
         {menu.href ? 
           <a className={commonStyle} href={menu.href} {...menu}>{menu.name}</a> :
           <LinkContainer

@@ -1,4 +1,9 @@
 const expYear = new Date().getFullYear() - 2014;
+
+require("dotenv").config({
+  path: '.env',
+})
+
 module.exports = {
   siteMetadata: {
     title: 'Chau Duong Portfolio',
@@ -48,6 +53,19 @@ module.exports = {
       resolve: `gatsby-plugin-styled-components`,
       options: {
         displayName: false
+      },
+    },
+    {
+      resolve: "gatsby-source-graphql",
+      options: {
+        typeName: "GitHub",
+        fieldName: "github",
+        url: "https://api.github.com/graphql",
+        // HTTP headers
+        headers: {
+          // Learn about environment variables: https://gatsby.dev/env-vars
+          Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
+        },
       },
     },
   ],

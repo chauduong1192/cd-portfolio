@@ -6,7 +6,7 @@ import media from "styled-media-query";
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import Container from "../components/Container"
+import Container from "../components/container"
 
 const GithubWrap = styled.a`
   width: 300px;

@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 import styled from 'styled-components'
 
 import Footer from './footer';
-import Menu from './menu';
+import Menu from './menu-left';
 
 const HeaderMobile = styled.div`
   box-shadow: ${props => !props.isShowMenu ? 'rgba(0, 0, 0, 0.07) 0px 5px 0px' : 'none'};

@@ -4,6 +4,7 @@ import * as relativeTime from 'dayjs/plugin/relativeTime'
 import tymeLogo from "./src/images/tyme.jpg";
 import leflairLogo from "./src/images/leflair.png";
 import gorillabLogo from "./src/images/gorillab.png";
+import shelterLogo from "./src/images/shelter.png";
 
 dayjs.extend(relativeTime)
 
@@ -29,6 +30,7 @@ export const workExperience = [
     company: 'ShelterApp - Freelancer',
     companyUrl: 'https://shelterapp.org/',
     role: 'React Native Developer',
+    logo: shelterLogo,
     experience: [
       {
         desc: 'Working with the backend team to build a small app that helps homeless and low-income families connect to services using the web and mobile apps where they can find Food, Shelter, Health, Work and other resources.'

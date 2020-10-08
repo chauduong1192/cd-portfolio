@@ -66,12 +66,12 @@ const IndexPage = () => {
                   const { duration, company, companyUrl, role, experience, logo } = ex;
                   return(
                     <div key={idx} className="mb-5">
-                      <div className={`text-black-52x3 font-medium flex items-end ${logo ? 'mb-2' : ''}`}>
-                        {logo && <img className="w-10" alt={company} src={logo} />}
+                      <div className={`text-black-52x3 font-medium items-center flex ${logo ? 'mb-2' : ''}`}>
+                        {logo && <img className={`w-10 ${company !== 'Leflair' ? 'rounded-full' : ''}`} alt={company} src={logo} />}
                         {
                           companyUrl ?
                           <a
-                            className={logo ? 'leading-none ml-2 text-lg' : ''}
+                            className={logo ? 'leading-none ml-3 text-lg' : ''}
                             href={companyUrl}
                             target="_blank"
                             rel="noopener noreferrer"

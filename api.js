@@ -1,10 +1,12 @@
 import * as dayjs from 'dayjs'
 import * as relativeTime from 'dayjs/plugin/relativeTime'
 
+
 import tymeLogo from "./src/images/tyme.jpg";
 import leflairLogo from "./src/images/leflair.png";
 import gorillabLogo from "./src/images/gorillab.png";
 import shelterLogo from "./src/images/shelter.png";
+import softfoundryLogo from "./src/images/softfoundry.png";
 
 dayjs.extend(relativeTime)
 
@@ -18,7 +20,7 @@ export const skills = [
 
 export const workExperience = [
   {
-    duration: `Mar 2020 - Now · ${dayjs().from(dayjs('Mar 2020'), true)}`,
+    duration: `Mar 2020 - Now · ${dayjs().from(dayjs('2020-03-01'), true)}`,
     company: 'TymeGlobal',
     companyUrl: 'https://www.linkedin.com/company/tymeglobal/',
     role: 'Software Engineering',
@@ -26,19 +28,7 @@ export const workExperience = [
     experience: []
   },
   {
-    duration: `Otc 2019 - Apr 2020 · ${dayjs('Otc 2019').from(dayjs('Apr 2020'), true)}`,
-    company: 'ShelterApp - Freelancer',
-    companyUrl: 'https://shelterapp.org/',
-    role: 'React Native Developer',
-    logo: shelterLogo,
-    experience: [
-      {
-        desc: 'Working with the backend team to build a small app that helps homeless and low-income families connect to services using the web and mobile apps where they can find Food, Shelter, Health, Work and other resources.'
-      },
-    ]
-  },
-  {
-    duration: `May 2018 - Feb 2020 · ${dayjs('May 2018').from(dayjs('Feb 2020'), true)}`,
+    duration: `Apr 2018 - Feb 2020 · ${dayjs('2018-04').from(dayjs('2020-02'), true)}`,
     company: 'Leflair',
     companyUrl: 'https://www.linkedin.com/company/leflair/',
     role: 'Senior Front-end Developer',
@@ -67,7 +57,19 @@ export const workExperience = [
     ]
   },
   {
-    duration: `Apr 2015 - Apr 2019 · ${dayjs('Apr 2015').from(dayjs('Apr 2019'), true)}`,
+    duration: `Otc 2019 - Apr 2020 · ${dayjs('2019-10').from(dayjs('2020-04'), true)}`,
+    company: 'ShelterApp - Freelancer',
+    companyUrl: 'https://shelterapp.org/',
+    role: 'React Native Developer',
+    logo: shelterLogo,
+    experience: [
+      {
+        desc: 'Working with the backend team to build a small app that helps homeless and low-income families connect to services using the web and mobile apps where they can find Food, Shelter, Health, Work and other resources.'
+      },
+    ]
+  },
+  {
+    duration: `Apr 2015 - Apr 2019 · ${dayjs('2015-04').from(dayjs('2019-04'), true)}`,
     company: 'Gorillab - Freelancer Team',
     companyUrl: 'https://www.facebook.com/gorillab.co',
     role: 'Senior Front-end Developer',
@@ -99,10 +101,11 @@ export const workExperience = [
     ]
   },
   {
-    duration: `Apr 2015 - May 2018 · ${dayjs('Apr 2015').from(dayjs('May 2018'), true)}`,
-    company: 'Softfoundry Company',
+    duration: `Apr 2015 - May 2018 · ${dayjs('2015-04').from(dayjs('2018-05'), true)}`,
+    company: 'Softfoundry',
     companyUrl: 'http://www.softfoundry.com/',
     role: 'Junior Front-end Developer',
+    logo: softfoundryLogo,
     experience: [
       {
         projectName: 'vmeet web service',
@@ -127,7 +130,7 @@ export const workExperience = [
     ]
   },
   {
-    duration: `Jul 2014 - Apr 2015 · ${dayjs('Jul 2014').from(dayjs('Apr 2015'), true)}`,
+    duration: `Jul 2014 - Apr 2015 · ${dayjs('2014-07').from(dayjs('2015-04'), true)}`,
     company: 'HuyenTanLion Company',
     role: 'Front-end Developer',
     experience: [

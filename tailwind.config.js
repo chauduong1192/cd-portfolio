@@ -1,4 +1,12 @@
 module.exports = {
+  future: {
+    purgeLayersByDefault: true,
+  },
+  purge: [
+    './src/**/*.html',
+    './src/**/*.vue',
+    './src/**/*.jsx',
+  ],
   prefix: '',
   important: false,
   separator: ':',

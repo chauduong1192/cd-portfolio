@@ -5,7 +5,7 @@ import styled from "styled-components"
 import media from "styled-media-query";
 
 import Layout from "../components/layout"
-import SEO from "../components/seo"
+import SEO from "../components/seo-tag"
 import Container from "../components/container"
 
 const GithubWrap = styled.a`

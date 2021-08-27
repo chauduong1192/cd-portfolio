@@ -1,4 +1,4 @@
-[![Netlify Status](https://api.netlify.com/api/v1/badges/e9f80ede-445d-4eda-a4be-7c0576eb3512/deploy-status)](https://app.netlify.com/sites/chauduong/deploys)](https://app.netlify.com/sites/chauduong/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/e9f80ede-445d-4eda-a4be-7c0576eb3512/deploy-status)](https://app.netlify.com/sites/chauduong/deploys)
 
 ## 🧐 What's inside?
 

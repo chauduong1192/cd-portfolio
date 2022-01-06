@@ -40,7 +40,7 @@ const IndexPage = () => {
           <div className="mb-8">
             <HelloWord
               className="text-black-52x3 font-medium mb-3 sm:mb-6 font-roboto text-2xl sm:text-4xl">
-              HI!
+              HI THERE!
             </HelloWord>
             <h3 className="sm:text-xl mb-4 sm:mb-6">
               {site.siteMetadata.description}
@@ -65,9 +65,9 @@ const IndexPage = () => {
                 {workExperience.map((ex, idx) => {
                   const { duration, company, companyUrl, role, experience, logo } = ex;
                   return(
-                    <div key={idx} className="mb-5">
+                    <div key={idx} className="mb-6">
                       <div className={`text-black-52x3 font-medium items-center flex ${logo ? 'mb-2' : ''}`}>
-                        {logo && <img className={`w-10 ${company !== 'Leflair' ? 'rounded-full' : ''}`} alt={company} src={logo} />}
+                        {logo && <img className="w-10 rounded-full" alt={company} src={logo} />}
                         {
                           companyUrl ?
                           <a
@@ -130,7 +130,7 @@ const IndexPage = () => {
                 <div className="text-black-52x3 font-medium">Hobbies</div>
                 <ul className="list-square ml-8 mt-1">
                   <li>
-                    <div className="text-black-52x3 inline">Coding, playing football, guitar and traveling</div>
+                    <div className="text-black-52x3 inline">Coding, play football and outdoor activies.</div>
                   </li>
                 </ul>
               </div>
@@ -140,6 +140,8 @@ const IndexPage = () => {
               EDUCATION
               </div>
               <div>Studied Software Engineering at <a href="http://www.vanlanguni.edu.vn/" target="_blank" rel="noopener noreferrer" className="inline text-black-52x3">Van Lang University</a> that transferred from <a href="https://www.cmu.edu/" target="_blank" rel="noopener noreferrer" className="inline text-black-52x3">Carnegie Mellon University</a>, US.</div>
+              <div>Oct 2010 - May 2014</div>
+              <div>GPA: 6.5</div>
             </div>
           </div>
           <div></div>

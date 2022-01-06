@@ -16,11 +16,11 @@ const menuData = [
     name: 'GitHub Repos',
     to: '/github-repos',
   },
-  {
-    name: 'Contact',
-    to: '/',
-    href: 'mailto:chau.duong1192@gmail.com'
-  },
+  // {
+  //   name: 'Contact',
+  //   to: '/',
+  //   href: 'mailto:chau.duong1192@gmail.com'
+  // },
 ];
 const commonStyle= `
   text-base

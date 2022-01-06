@@ -5,6 +5,10 @@ import styled from 'styled-components'
 import Footer from './footerB';
 import Menu from './menu-left';
 
+import PhoneIcon from '../static/icons/phone.svg';
+import EmailIcon from '../static/icons/email.svg';
+import AddresIcon from '../static/icons/address.svg';
+
 const HeaderMobile = styled.div`
   box-shadow: ${props => !props.isShowMenu ? 'rgba(0, 0, 0, 0.07) 0px 5px 0px' : 'none'};
 `;
@@ -74,20 +78,27 @@ const Header = () => {
       </HeaderMobile>
     );
   }
-
+  const renderInfo = () => {
+    return(
+      <>
+        <h2 className="text-sm-cd leading-relaxed flex items-center mb-1"><PhoneIcon className="w-5 h-5 fill-gray mr-2" /><a href="tel:+0396031616">039.603.1616</a></h2>
+        <h2 className="text-sm-cd leading-relaxed flex items-center mb-1"><EmailIcon className="w-5 h-5 fill-gray mr-2" /><div><a href="mailto:chau.duong1192@gmail.com">chau.duong1192</a></div></h2>
+        <h2 className="text-sm-cd leading-relaxed flex items-center"><AddresIcon className="w-5 h-5 fill-gray mr-2" />Ho Chi Minh, Viet Nam</h2>
+      </>
+    );
+  }
   const renderHeaderDesktop = () => {
     return(
       <HeaderDesktop
         className="
-        p-8 bottom-0 left-0 top-0 hidden flex-col justify-between fixed z-500-cd bg-white w-260px
-        lg:w-280px sm:flex"
+        p-8 bottom-0 left-0 top-0 hidden flex-col justify-between fixed z-500-cd bg-white w-280px sm:flex"
       >
         <div>
-          <Link className="mb-4 block" to="/">
+          <Link className="mb-0 block" to="/">
             <h1 className="text-3xl text-black-25x3 uppercase">chau duong</h1>
           </Link>
-          <h2 className="text-sm-cd leading-relaxed">Senior Front-end Developer</h2>
-          <h2 className="text-sm-cd leading-relaxed">React, React Native Developer</h2>
+          <h2 className="text-sm-cd leading-relaxed mb-5">Senior Front-end Developer</h2>
+          {renderInfo()}
         </div>
         <div className="flex flex-col justify-center">
           <Menu />
@@ -108,7 +119,10 @@ const Header = () => {
         <Menu />
         <FooterContainer
           className="absolute flex justify-center items-center flex-col">
-          <Footer />
+            <div>
+              {renderInfo()}
+            </div>
+          {/* <Footer /> */}
         </FooterContainer>
       </menu>
     );

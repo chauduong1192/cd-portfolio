@@ -9,6 +9,9 @@ import SkypeIcon from '../static/icons/skype.svg';
 const commonClass = 'md:w-4 md:h-4 w-5 h-5 fill-gray';
 const footerData = [
   {
+    icon: <div>Other contacts: </div>,
+  },
+  {
     url: 'https://github.com/chauduong1192',
     icon: <GithubIcon className={commonClass} />,
   },
@@ -44,9 +47,9 @@ const Footer = () => {
 
   return(
     <>
-      <h4 className="mb-4">
+      {/* <h4 className="mb-4">
         <div>Contact me for business at </div>
-        <a href="mailto:chau.duong1192@gmail.com"><span className="text-black-52x3">chau.duong1192@gmail.com</span></a></h4>
+        <a href="mailto:chau.duong1192@gmail.com"><span className="text-black-52x3">chau.duong1192@gmail.com</span></a></h4> */}
       <ul className="flex flex-row">
         {renderItemFooter()}
       </ul>

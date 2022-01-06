@@ -22,14 +22,25 @@ export const workExperience = [
     duration: `Mar 2020 - Now · ${dayjs().from(dayjs("2020-03-01"), true)}`,
     company: "TymeGlobal",
     companyUrl: "https://www.linkedin.com/company/tymeglobal/",
-    role: "Software Engineering",
+    role: "Senior Software Engineering",
     logo: tymeLogo,
     experience: [
+      {
+        projectName: "Personal Banking",
+        url: "https://www.tymebank.co.za/personal-banking/",
+        desc:
+          "Maintenance and develop many new features as bill payment, goal save, new gen for pin pad.",
+      },
       {
         projectName: "the Bamboo Mock",
         url: "https://github.com/chauduong1192/thebambooMock",
         desc:
           "The extension helps my team by mocking API and changing their response, esponse time and status, user can try all test case scenario like long loading time, error states, or any missing or incorrect data. ",
+      },
+      {
+        projectName: "Core Payment Services",
+        desc:
+          "Working with backend team and BA team to define the new solution for new Philipin area",
       },
     ],
   },
@@ -44,8 +55,8 @@ export const workExperience = [
     logo: leflairLogo,
     experience: [
       {
-        projectName: "leflair.vn",
-        // url: 'https://www.leflair.vn/vn/',
+        projectName: "leflair.com",
+        url: 'https://www.leflair.com/vn/',
         desc:
           "My responsibility at Leflair in first 4 months is build up the new main website based on new technologies as NextJs (server side rendering by using Express), react, redux, sass, style-jsx, PWA...",
       },

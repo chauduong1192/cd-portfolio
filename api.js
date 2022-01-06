@@ -10,7 +10,7 @@ import softfoundryLogo from "./src/images/softfoundry.png"
 dayjs.extend(relativeTime)
 
 export const skills = [
-  "React, React Native, Redux, NextJs, GastbyJs, TypeScript, Webpack, Babel, Tslint, Workbox.",
+  "React, React Native, Redux, NextJs, GastbyJs, Strapi, TypeScript, Webpack, Babel, Tslint, Progressive Web App.",
   "Style-JSX, Styled-components, Bootstrap, TailwindCSS, SASS.",
   "SEO audits, site performance, marketing intergrations(GTM, GA, RTB-house, Aimtell, FB Pixel, ...).",
   "GIT, Yarn, NPM, VSCode, Xcode, Android Studio, Trello, Jira, Sketch, Figma.",
@@ -26,21 +26,21 @@ export const workExperience = [
     logo: tymeLogo,
     experience: [
       {
-        projectName: "Personal Banking",
-        url: "https://www.tymebank.co.za/personal-banking/",
+        projectName: "Core Payment Services",
         desc:
-          "Maintenance and develop many new features as bill payment, goal save, new gen for pin pad.",
+          "In the period of 6 months, I had a chance to working with backend team and BA team to define, design, implement the new payment flow solution for new Philipin area based on Java Spring Boot, BDD testing, Microservices, Serverless and AWS",
       },
       {
-        projectName: "the Bamboo Mock",
+        projectName: "Internet Banking",
+        url: "https://bank.tymedigital.co.za/",
+        desc:
+          "Maintenance and develop many new features for IB as bill payment, goal save, new gen for pin pad.",
+      },
+      {
+        projectName: "The Bamboo Mock",
         url: "https://github.com/chauduong1192/thebambooMock",
         desc:
           "The extension helps my team by mocking API and changing their response, esponse time and status, user can try all test case scenario like long loading time, error states, or any missing or incorrect data. ",
-      },
-      {
-        projectName: "Core Payment Services",
-        desc:
-          "Working with backend team and BA team to define the new solution for new Philipin area",
       },
     ],
   },
@@ -58,13 +58,13 @@ export const workExperience = [
         projectName: "leflair.com",
         url: 'https://www.leflair.com/vn/',
         desc:
-          "My responsibility at Leflair in first 4 months is build up the new main website based on new technologies as NextJs (server side rendering by using Express), react, redux, sass, style-jsx, PWA...",
+          "My responsibility at Leflair in first 4 months is build up the new main website based on new technologies as NextJs (server side rendering by using Express), react, redux, sass, style-jsx, PWA.",
       },
       {
-        projectName: "promotion-page",
-        // url: 'https://pages.leflair.vn/promotions',
+        projectName: "About Lefair",
+        url: 'https://pages.leflair.com/about-us',
         desc:
-          "Maintenance and develop new features, new campaigns, new vouchers for this page.",
+          "Build up the static page based on gastby, styled-jsx and using headless cms (strapi) to manage the content.",
       },
       {
         projectName: "web-next",
@@ -76,7 +76,7 @@ export const workExperience = [
         projectName: "simple-ecom",
         url: "http://ecommerce-simple.surge.sh/",
         desc:
-          "This is the first challenge before I worked at Leflair that is build the simple ecom page with few pages by using create-react-app",
+          "This is the first challenge before I worked at Leflair that is build the simple ecom page with few pages by using create-react-app.",
       },
     ],
   },

@@ -135,7 +135,7 @@ const IndexPage = () => {
                 </ul>
               </div>
             </div>
-            <div className="mt-4 sm:mt-6">
+            <div className="mt-4 sm:mt-6 pb-4">
               <div className=" text-xl sm:text-2xl text-black-52x3 underline font-medium mb-3 sm:mb-4">
               EDUCATION
               </div>

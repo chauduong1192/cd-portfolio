@@ -1,6 +1,7 @@
 import * as dayjs from "dayjs"
 import * as relativeTime from "dayjs/plugin/relativeTime"
 
+import airfoilLogo from "./src/images/airfoil.png"
 import tymeLogo from "./src/images/tyme.jpg"
 import leflairLogo from "./src/images/leflair.png"
 import gorillabLogo from "./src/images/gorillab.png"
@@ -19,7 +20,23 @@ export const skills = [
 
 export const workExperience = [
   {
-    duration: `Mar 2020 - Now · ${dayjs().from(dayjs("2020-03-01"), true)}`,
+    duration: `Apr 2022 - Now · ${dayjs().from(dayjs("2022-04"), true)}`,
+    company: "Airfoil Studio",
+    companyUrl: "https://www.airfoil.studio/",
+    role: "Product Engineer",
+    logo: airfoilLogo,
+    experience: [
+      {
+        projectName: "",
+        desc:"Airfoil is a design consultancy firm that designs almost exclusively for the Web3 industry. In Singapore, there is also a team of engineers to implement the designs for these clients. As one of the engineers, I worked with the team to helped build the UI and implemented business logic, mostly in React, TypeScript and TailwindCSS, Styled-component.",
+      },
+    ],
+  },
+  {
+    duration: `Mar 2020 - Mar 2022 · ${dayjs("2020-03").from(
+      dayjs("2022-03"),
+      true
+    )}`,
     company: "TymeGlobal",
     companyUrl: "https://www.linkedin.com/company/tymeglobal/",
     role: "Senior Software Engineering",

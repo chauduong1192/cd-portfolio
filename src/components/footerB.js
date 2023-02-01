@@ -23,10 +23,10 @@ const footerData = [
     url: 'skype:chauduong1192?chat',
     icon: <SkypeIcon className={commonClass} />,
   },
-  {
-    url: 'https://www.facebook.com/chau.duong1192',
-    icon: <FacebookIcon className={commonClass} />,
-  },
+  // {
+  //   url: 'https://www.facebook.com/chau.duong1192',
+  //   icon: <FacebookIcon className={commonClass} />,
+  // },
 ];
 const Footer = () => {
 

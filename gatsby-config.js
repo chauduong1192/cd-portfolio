@@ -7,7 +7,7 @@ require("dotenv").config({
 module.exports = {
   siteMetadata: {
     title: 'Chau Duong Portfolio',
-    description: `I am a front-end web developer, I have over ${expYear} years experience developing website, aplication with react and react native. I’m focused on turning ideas into delightful, practical software, doing my best work when collaborating closely with founders, designers, and developers.`,
+    description: `I am a front-end web developer, I have over ${expYear} years experience developing websites, and applications with react and react native. I’m focused on turning ideas into delightful, practical software, doing my best work when collaborating closely with founders, designers, and developers.`,
     author: 'chau duong',
   },
   plugins: [

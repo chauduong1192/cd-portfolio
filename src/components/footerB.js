@@ -2,7 +2,7 @@ import React from "react"
 
 import GithubIcon from '../static/icons/github.svg';
 import LinkedinIcon from '../static/icons/linkedin.svg';
-import FacebookIcon from '../static/icons/facebook.svg';
+// import FacebookIcon from '../static/icons/facebook.svg';
 import SkypeIcon from '../static/icons/skype.svg';
 
 

@@ -1,53 +1,63 @@
 {
-  "name": "cd-portfolio",
-  "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "name": "ts-nextjs-tailwind-starter",
   "version": "0.1.0",
-  "author": "Chau Duong <chau.duong1192@gmail.com>",
-  "engineStrict" : true,
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "lint:fix": "eslint src --fix && pnpm format",
+    "lint:strict": "eslint --max-warnings=0 src",
+    "typecheck": "tsc --noEmit --incremental false",
+    "format": "prettier -w .",
+    "format:check": "prettier -c .",
+    "postbuild": "next-sitemap --config next-sitemap.config.js",
+    "prepare": "husky install"
+  },
   "dependencies": {
-    "babel-plugin-styled-components": "^1.10.7",
-    "dayjs": "^1.8.28",
-    "gatsby": "^2.19.7",
-    "gatsby-image": "^2.2.39",
-    "gatsby-plugin-manifest": "^2.2.39",
-    "gatsby-plugin-postcss": "^2.1.19",
-    "gatsby-plugin-react-helmet": "^3.1.21",
-    "gatsby-plugin-react-svg": "^3.0.0",
-    "gatsby-plugin-sharp": "^2.4.3",
-    "gatsby-plugin-styled-components": "^3.3.3",
-    "gatsby-source-filesystem": "^2.1.46",
-    "gatsby-source-graphql": "^2.7.1",
-    "gatsby-theme-tailwindcss": "^1.0.2",
-    "gatsby-transformer-sharp": "^2.3.13",
-    "prop-types": "^15.7.2",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
-    "react-helmet": "^5.2.1",
-    "styled-components": "^5.1.1",
-    "styled-media-query": "^2.1.2"
+    "clsx": "^2.0.0",
+    "dayjs": "^1.11.13",
+    "framer-motion": "^11.11.8",
+    "next": "^14.2.13",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-icons": "^5.3.0",
+    "tailwind-merge": "^2.5.2",
+    "tailwind-variants": "^0.2.1",
+    "zod": "^3.22.4"
   },
   "devDependencies": {
-    "prettier": "^1.19.1"
+    "@commitlint/cli": "^16.3.0",
+    "@commitlint/config-conventional": "^16.2.4",
+    "@svgr/webpack": "^8.1.0",
+    "@types/react": "^18.3.4",
+    "@typescript-eslint/eslint-plugin": "^5.62.0",
+    "@typescript-eslint/parser": "^5.62.0",
+    "autoprefixer": "^10.4.20",
+    "eslint": "^8.57.1",
+    "eslint-config-next": "^14.2.13",
+    "eslint-config-prettier": "^8.10.0",
+    "eslint-plugin-simple-import-sort": "^7.0.0",
+    "eslint-plugin-unused-imports": "^2.0.0",
+    "husky": "^7.0.4",
+    "lint-staged": "^12.5.0",
+    "next-router-mock": "^0.9.0",
+    "next-sitemap": "^2.5.28",
+    "postcss": "^8.4.45",
+    "prettier": "^3.3.3",
+    "prettier-plugin-classnames": "^0.7.3",
+    "prettier-plugin-tailwindcss": "^0.6.8",
+    "tailwindcss": "^3.4.12",
+    "typescript": "^4.9.5"
   },
-  "keywords": [
-    "gatsby"
-  ],
-  "license": "MIT",
-  "scripts": {
-    "dev": "gatsby develop",
-    "build": "gatsby build",
-    "start": "npm run develop",
-    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
-    "serve": "gatsby serve",
-    "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
-  },
-  "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+  "lint-staged": {
+    "**/*.{js,jsx,ts,tsx}": [
+      "eslint --max-warnings=10",
+      "prettier -w"
+    ],
+    "**/*.{json,css,scss,md,webmanifest}": [
+      "prettier -w"
+    ]
   }
 }

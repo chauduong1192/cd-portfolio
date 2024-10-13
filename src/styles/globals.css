@@ -1,17 +1,62 @@
 @tailwind base;
-
 @tailwind components;
-
 @tailwind utilities;
 
-html {
-  font-family: Rubik, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizelegibility;
-  scroll-behavior: smooth;
+:root {
+  --tw-color-zinc-500: 131 131 131;
+  --tw-color-zinc-900: 25 25 25;
+  --tw-color-neutral-300: 211 211 211;
+  --tw-color-neutral-700: 52 52 52;
+  --tw-color-neutral-400: 158 158 158;
+  --tw-color-neutral-800: 33 33 33;
+  --tw-color-stone-500: 105 105 105;
+  --tw-color-gray-200: 237 237 237;
+  --color-zinc-500: rgb(var(--tw-color-zinc-500)); /* #838383 */
+  --color-zinc-900: rgb(var(--tw-color-zinc-900)); /* #191919 */
+  --color-neutral-300: rgb(var(--tw-color-neutral-300)); /* #d3d3d3 */
+  --color-neutral-400: rgb(var(--tw-color-neutral-400)); /* #9e9e9e */
+  --color-neutral-700: rgb(var(--tw-color-neutral-700)); /* #343434 */
+  --color-neutral-800: rgb(var(--tw-color-neutral-800)); /* #212121 */
+  --color-stone-500: rgb(var(--tw-color-stone-500)); /* #696969 */
+  --color-gray-200: rgb(var(--tw-color-gray-200)); /* #EDEDED */
 }
+
+@layer base {
+  * {
+    @apply transition-colors duration-300 ease-in-out;
+  }
+}
+html {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  scroll-behavior: smooth;
+  font-size: 16px;
+  line-height: 1.6em;
+  font-weight: 400;
+  color: var(--color-stone-500);
+}
+
 body {
-  color: rgb(105, 105, 105);
-  background: rgb(211, 211, 211);
+  background: var(--color-neutral-300);
+}
+
+:root {
+  font-family: var(--font-rubik), system-ui, sans-serif;
+
+  @supports (font-variation-settings: normal) {
+    font-family: var(--font-rubik), system-ui, sans-serif;
+  }
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: calc(100vh - env(safe-area-inset-top) - env(safe-area-inset-bottom));
 }

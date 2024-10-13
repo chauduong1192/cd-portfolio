@@ -1,9 +1,7 @@
 import { Container } from '@/components/Container';
 
-import { siteConfig } from '@/constant/config';
-
 export const metadata = {
-  title: `Projects | ${siteConfig.title_short}`,
+  title: 'Projects',
 };
 export default function Projects() {
   return (

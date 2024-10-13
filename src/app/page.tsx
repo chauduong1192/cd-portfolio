@@ -2,10 +2,8 @@ import Link from 'next/link';
 
 import { Container } from '@/components/Container';
 
-import { siteConfig } from '@/constant/config';
-
 export const metadata = {
-  title: `Home | ${siteConfig.title_short}`,
+  title: 'Home',
 };
 
 export default function HomePage() {

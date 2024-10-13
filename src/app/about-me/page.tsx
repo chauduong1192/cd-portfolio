@@ -4,7 +4,6 @@ import { Education } from '@/app/about-me/components/Education';
 import { OtherSkills } from '@/app/about-me/components/OtherSkills';
 import { Skills } from '@/app/about-me/components/Skills';
 import { WorkExperience } from '@/app/about-me/components/WorkExperience';
-import { siteConfig } from '@/constant/config';
 import {
   education,
   hobbies,
@@ -14,7 +13,7 @@ import {
 } from '@/utils/apis';
 
 export const metadata = {
-  title: `About me | ${siteConfig.title_short}`,
+  title: 'About me',
 };
 
 export default function AboutMe() {

@@ -3,11 +3,14 @@ import { useEffect, useState } from 'react';
 import { cn } from '@/utils/classnames';
 
 export const ToggleTheme = () => {
-  const [activeTheme, setActiveTheme] = useState<string>('system');
+  const [activeTheme, setActiveTheme] = useState<string>('light');
 
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'system' || !savedTheme) {
+    if (!savedTheme) {
+      applyTheme('light');
+      setActiveTheme('light');
+    } else if (savedTheme === 'system') {
       applySystemTheme();
       setActiveTheme('system');
     } else {

@@ -2,7 +2,7 @@ name: Code Check
 on:
   push:
     branches:
-      - main
+      - master
   pull_request: {}
 
 concurrency:

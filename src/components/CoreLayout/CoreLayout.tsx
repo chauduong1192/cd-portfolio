@@ -1,9 +1,12 @@
-import React, { useEffect, useState, useRef, PropsWithChildren } from 'react';
-import { Sidebar } from '@/components/Sidebar';
+'use client';
+
+import { PropsWithChildren, useEffect, useRef, useState } from 'react';
+
 import { GoToTop } from '@/components/GoToTop';
 import { Header } from '@/components/Header';
+import { ToggleTheme } from '@/components/ToggleTheme';
 
-type CoreLayoutProps = PropsWithChildren<{}>;
+type CoreLayoutProps = PropsWithChildren;
 
 export const CoreLayout = ({ children }: CoreLayoutProps) => {
   const [isShowGoToTop, setShowGoToTop] = useState(false);
@@ -20,7 +23,7 @@ export const CoreLayout = ({ children }: CoreLayoutProps) => {
     if (currentStatus) {
       const heightOfScreen = (currentStatus?.clientHeight / 2) * -1;
       setShowGoToTop(
-        currentStatus?.getBoundingClientRect().top <= heightOfScreen
+        currentStatus?.getBoundingClientRect().top <= heightOfScreen,
       );
     }
   };
@@ -38,10 +41,13 @@ export const CoreLayout = ({ children }: CoreLayoutProps) => {
       <Header />
       <main
         ref={ref}
-        className='md:ml-[300px] min-h-screen flex justify-center'
+        className='lg:ml-[300px] min-h-screen flex justify-center dark:bg-zinc-900'
       >
         {children}
         {isShowGoToTop && <GoToTop />}
+        <div className='fixed bottom-8 right-6 hidden lg:block'>
+          <ToggleTheme />
+        </div>
       </main>
     </>
   );

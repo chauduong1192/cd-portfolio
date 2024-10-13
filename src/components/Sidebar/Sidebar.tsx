@@ -1,14 +1,23 @@
 import Link from 'next/link';
-import React from 'react';
+import { usePathname } from 'next/navigation';
+
+import { Animate } from '@/components/Animate';
+
+import { cn } from '@/utils/classnames';
+import { fadeInX } from '@/utils/framer-variants';
 
 const menuData = [
   {
-    name: 'About me',
+    name: 'Home',
     href: '/',
   },
   {
-    name: 'GitHub Repos',
-    href: '/github-repos',
+    name: 'About me',
+    href: '/about-me',
+  },
+  {
+    name: 'Projects',
+    href: '/projects',
   },
   {
     name: 'Contact',
@@ -28,25 +37,34 @@ const linkClassName = `
   hover:text-neutral-700
   border-solid
   border-b-2
-  opacity-75
   inline-block
   whitespace-no-wrap
   cursor-pointer
-  transition-all
+  dark:hover:text-gray-200
+  dark:hover:border-gray-200
 `;
 
-export const Sidebar = () => {
+export const Sidebar = ({ closeMenu }: { closeMenu?: () => void }) => {
+  const pathName = usePathname();
   return (
-    <nav>
-      <ul>
-        {menuData.map(({ href, name }, idx) => (
-          <li key={idx} className='my-2'>
-            <Link href={href} className={linkClassName}>
-              {name}
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </nav>
+    <Animate variants={fadeInX('left')}>
+      <nav>
+        <ul>
+          {menuData.map(({ href, name }, idx) => (
+            <li key={idx} className='my-2'>
+              <Link
+                onClick={closeMenu}
+                href={href}
+                className={cn(linkClassName, {
+                  'text-neutral-700 dark:text-gray-200': href === pathName,
+                })}
+              >
+                {name}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </nav>
+    </Animate>
   );
 };

@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
-import * as React from 'react';
-import { RiAlarmWarningFill } from 'react-icons/ri';
+import Link from 'next/link';
+
+import { Container } from '@/components/Container';
 
 export const metadata: Metadata = {
   title: 'Not Found',
@@ -8,17 +9,30 @@ export const metadata: Metadata = {
 
 export default function NotFound() {
   return (
-    <main>
-      <section className='bg-white'>
-        <div className='layout flex min-h-screen flex-col items-center justify-center text-center text-black'>
-          <RiAlarmWarningFill
-            size={60}
-            className='drop-shadow-glow animate-flicker text-red-500'
-          />
-          <h1 className='mt-8 text-4xl md:text-6xl'>Page Not Found</h1>
-          <a href='/'>Back to home</a>
+    <Container className='flex items-center sm:px-8'>
+      <section className='px-0 lg:px-16 my-16'>
+        <div className='space-y-5 max-w-[580px]'>
+          <div
+            className='text-4xl font-roboto-mono text-neutral-700 dark:text-gray-200 tracking-tighter
+              font-medium'
+          >
+            Opps! Page not found
+          </div>
+          <div className='text-2xl text-stone-500 dark:text-neutral-400 leading-relaxed'>
+            Seem you are lost. <br />
+            Please go back to the previous page.
+          </div>
+          <div className='flex gap-4 items-center text-center'>
+            <Link
+              href='/'
+              className='uppercase text-neutral-700 dark:text-gray-200 border-b-2 border-neutral-700
+                dark:border-gray-200 font-medium tracking-wider'
+            >
+              Click me
+            </Link>
+          </div>
         </div>
       </section>
-    </main>
+    </Container>
   );
 }

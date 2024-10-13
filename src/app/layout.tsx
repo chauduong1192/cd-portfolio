@@ -1,11 +1,12 @@
 import { Metadata } from 'next';
+import { Roboto_Mono, Rubik } from 'next/font/google';
 import * as React from 'react';
 
 import '@/styles/globals.css';
 
-import { siteConfig } from '@/constant/config';
+import { CoreLayout } from '@/components/CoreLayout';
 
-import { Roboto_Mono, Rubik } from 'next/font/google';
+import { siteConfig } from '@/constant/config';
 
 const robotoMono = Roboto_Mono({
   weight: ['400', '500'],
@@ -51,14 +52,14 @@ export const metadata: Metadata = {
     title: siteConfig.title,
     description: siteConfig.description,
     images: [`${siteConfig.url}/images/og.jpg`],
-    // creator: '@th_clarence',
+    creator: '@ChauDuong1192',
   },
-  // authors: [
-  //   {
-  //     name: 'Theodorus Clarence',
-  //     url: 'https://theodorusclarence.com',
-  //   },
-  // ],
+  authors: [
+    {
+      name: 'Chau Duong',
+      url: 'https://chauduong.com',
+    },
+  ],
 };
 
 export default function RootLayout({
@@ -68,7 +69,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang='en' className={`${robotoMono.variable} ${rubik.variable}`}>
-      <body>{children}</body>
+      <body>
+        <CoreLayout>{children}</CoreLayout>
+      </body>
     </html>
   );
 }

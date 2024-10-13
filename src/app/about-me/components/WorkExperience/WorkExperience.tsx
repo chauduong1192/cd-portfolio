@@ -54,7 +54,7 @@ export const WorkExperience = ({ workExperience }: WorkExperienceProps) => {
               <div className='font-normal text-neutral-700/75 dark:text-gray-200/75'>
                 {duration}
               </div>
-              <ul className='mt-2 flex flex-col gap-1'>
+              <ul className='mt-2 ml-8 list-disc flex flex-col gap-1'>
                 {experience.map((desc, idx) => (
                   <li key={idx}>
                     <div className='dark:text-neutral-400 inline text-balance'>

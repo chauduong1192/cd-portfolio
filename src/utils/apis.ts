@@ -38,7 +38,10 @@ export const workExperience: WorkExperience[] = [
     role: 'Product Engineer',
     logo: '/images/airfoil.png',
     experience: [
-      'Airfoil is a design consultancy firm that designs almost exclusively for the Web3 industry. In Singapore, there is also a team of engineers to implement the designs for these clients. As one of the engineers, I worked with the team to helped build the UI and implemented business logic, mostly in React, TypeScript and TailwindCSS, Styled-component.',
+      'At Airfoil, a cutting-edge design consultancy firm specializing in Web3 projects, I played a crucial role as a Product Engineer within their Singapore-based development team.',
+      'Collaborating closely with designers to translate innovative Web3 concepts into functional, user-friendly interfaces.',
+      'Spearheading the development of complex React components, ensuring seamless integration of blockchain functionalities.',
+      'Contributing to the development of reusable component libraries and design systems tailored for Web3 projects.',
     ],
   },
   {
@@ -51,7 +54,10 @@ export const workExperience: WorkExperience[] = [
     role: 'Senior Software Engineering',
     logo: '/images/tyme.jpg',
     experience: [
-      'TymeGlobal is a fintech company that provides a platform for international money transfer and currency exchange. I was responsible for building the web and mobile applications for the company. I worked with the team to build the UI and implemented business logic, mostly in React, React Native, TypeScript, and TailwindCSS.',
+      'At TymeGlobal, a pioneering fintech company specializing in international money transfers and currency exchange, I played a pivotal role as a senior software engineer.',
+      'My primary focus was on developing robust and user-friendly web. Implementing complex financial logic and integrating with backend services to handle real-time currency conversions, transfer tracking, and account management.',
+      'Utilizing TypeScript to enhance code quality, maintainability, and catch potential errors early in the development process.',
+      'Optimizing application performance, focusing on fast load times and smooth user interactions, crucial for financial transactions.',
     ],
   },
   {
@@ -64,7 +70,11 @@ export const workExperience: WorkExperience[] = [
     role: 'Senior Front-end Developer',
     logo: '/images/leflair.png',
     experience: [
-      'Leflair is a Vietnamese e-commerce company that sells luxury brands at a discount. I was responsible for building the web and mobile applications for the company. I worked with the team to build the UI and implemented business logic, mostly in React, React Native, TypeScript, and TailwindCSS.',
+      'At Leflair, a prominent Vietnamese e-commerce platform specializing in discounted luxury brands, I experienced significant professional growth and made substantial contributions to the company.',
+      'Promoted to Senior Front-End Developer within one year, demonstrating rapid skill advancement and leadership potential.',
+      'Collaborated closely with the marketing team and Product Owner to conceptualize, design, and implement new features that enhanced user experience and drove sales.',
+      'Architected and implemented scalable front-end solutions to support Leflairs growing user base and traffic.',
+      'Optimized website performance to handle millions of monthly visitors while maintaining exceptional uptime.',
     ],
   },
   {
@@ -77,7 +87,9 @@ export const workExperience: WorkExperience[] = [
     role: 'React Native Developer',
     logo: '/images/shelter.png',
     experience: [
-      'ShelterApp is a non-profit organization that provides a platform for people to donate to the homeless. I was responsible for building the mobile applications for the company. I worked with the team to build the UI and implemented business logic, mostly in React Native, TypeScript, and TailwindCSS.',
+      'At ShelterApp, a non-profit organization dedicated to connecting homeless individuals with vital resources and facilitating donations, I played a crucial role in developing a mobile-first platform that bridges the gap between those in need and those who can help',
+      'Collaborated closely with the backend team and Product Owner to define and implement solutions for locating non-profit shelters and services for the homeless',
+      'Led the front-end development of the mobile application using React Native, ensuring a seamless user experience across both iOS and Android platforms',
     ],
   },
   {
@@ -90,7 +102,10 @@ export const workExperience: WorkExperience[] = [
     role: 'Senior Front-end Developer',
     logo: '/images/gorillab.png',
     experience: [
-      'I worked with the team to build the UI and implemented business logic, mostly in React, Redux, TypeScript, and TailwindCSS.',
+      'As a key member of Gorillab, a dynamic freelance team comprising four highly skilled developers, I contributed to the creation of numerous successful products with a strong focus on exceptional user experience',
+      'Our expertise in React and React Native allowed us to deliver high-quality, user-centric solutions for a diverse clientele.',
+      'Collaborated closely with three other talented developers in a flat, agile structure',
+      'Maintained a startup-like atmosphere, fostering innovation and rapid development cycles',
     ],
   },
   {
@@ -102,9 +117,7 @@ export const workExperience: WorkExperience[] = [
     companyUrl: 'http://www.softfoundry.com/',
     role: 'Junior Front-end Developer',
     logo: '/images/softfoundry.png',
-    experience: [
-      'I worked with the team to build the UI and implemented business logic, mostly in React, Redux, TypeScript, and TailwindCSS.',
-    ],
+    experience: [],
   },
   {
     duration: `Jul 2014 - Apr 2015 · ${dayjs('2014-07').from(
@@ -113,9 +126,7 @@ export const workExperience: WorkExperience[] = [
     )}`,
     company: 'HuyenTanLion',
     role: 'Front-end Developer',
-    experience: [
-      'I worked with the team to build the UI and implemented business logic, mostly in React, Redux, TypeScript, and TailwindCSS.',
-    ],
+    experience: [],
   },
 ];
 

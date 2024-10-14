@@ -10,9 +10,20 @@ export const metadata = {
   title: 'Github repositories',
 };
 
-export default async function GithubRepositories() {
+async function getPosts() {
   const res = await fetch(`${process.env.API_URL}/api/repos`);
-  const posts: GithubRepo[] = await res.json();
+
+  if (!res.ok) {
+    // This will activate the closest `error.js` Error Boundary
+    throw new Error('Failed to fetch data');
+  }
+
+  return res.json();
+}
+
+export default async function GithubRepositories() {
+  // const res = await fetch(`${process.env.API_URL}/api/repos`);
+  const posts: GithubRepo[] = await getPosts();
 
   const renderGitHubList = () => {
     if (!posts) {

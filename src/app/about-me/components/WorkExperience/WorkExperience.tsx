@@ -23,10 +23,9 @@ export const WorkExperience = ({ workExperience }: WorkExperienceProps) => {
                   <NextImage
                     width={40}
                     height={40}
-                    // className='rounded-full oer'
+                    useSkeleton
                     classNames={{
-                      image: 'rounded-full',
-                      blur: 'rounded-full',
+                      image: 'rounded-full size-10 bg-stone-500',
                     }}
                     alt={company}
                     src={logo}

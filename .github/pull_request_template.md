@@ -8,7 +8,7 @@ Please include a summary of the technical solution and how it solves the problem
 # Checklist
 
 - [ ] I have commented my code, particularly in hard-to-understand areas.
-- [ ] Already rebased against master branch.
+- [ ] Already rebased against main branch.
 
 # Screenshots
 

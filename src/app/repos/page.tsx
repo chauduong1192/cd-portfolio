@@ -11,7 +11,9 @@ export const metadata = {
 };
 
 async function getPosts() {
-  const res = await fetch(`${process.env.API_URL}/api/repos`);
+  const res = await fetch(
+    `${process.env.API_URL ?? 'http://localhost:3000'}/api/repos`,
+  );
 
   if (!res.ok) {
     // This will activate the closest `error.js` Error Boundary

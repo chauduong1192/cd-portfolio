@@ -1,11 +1,15 @@
 import { Hono } from 'hono';
+import { cache } from 'hono/cache';
 import { handle } from 'hono/vercel';
 
 import { GithubRepo } from '@/types/github';
 
-// export const runtime = 'edge';
-
 const app = new Hono().basePath('/api');
+
+const cacheMiddleware = cache({
+  cacheName: 'my-repos',
+  cacheControl: 'max-age=3600',
+});
 
 app.get('/repos', async (c) => {
   try {
@@ -27,5 +31,9 @@ app.get('/repos', async (c) => {
     );
   }
 });
+
+if (typeof caches !== 'undefined') {
+  app.use('/repos', cacheMiddleware);
+}
 
 export const GET = handle(app);

@@ -27,12 +27,11 @@ async function getPosts() {
 }
 
 export default async function GithubRepositories() {
-  // const res = await fetch(`${process.env.API_URL}/api/repos`);
   const posts: GithubRepo[] = await getPosts();
 
   const renderGitHubList = () => {
     if (!posts) {
-      return null;
+      return <div>Loading...</div>;
     }
     return posts
       .sort((a, b) => b.stargazers_count - a.stargazers_count)

@@ -1,5 +1,6 @@
-import Image from 'next/image';
 import { ComponentPropsWithoutRef } from 'react';
+
+import NextImage from '@/components/NextImage';
 
 import { TitleSection } from '@/app/about-me/components/TitleSection';
 import { cn } from '@/utils/classnames';
@@ -19,10 +20,14 @@ export const WorkExperience = ({ workExperience }: WorkExperienceProps) => {
             <div key={company}>
               <div className={cn('items-center flex mb-2')}>
                 {logo && (
-                  <Image
+                  <NextImage
                     width={40}
                     height={40}
-                    className='rounded-full'
+                    // className='rounded-full oer'
+                    classNames={{
+                      image: 'rounded-full',
+                      blur: 'rounded-full',
+                    }}
                     alt={company}
                     src={logo}
                   />

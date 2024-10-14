@@ -8,7 +8,7 @@ export const metadata = {
 
 export default function HomePage() {
   return (
-    <Container className='flex items-center sm:px-8'>
+    <Container hasCenter>
       <section className='px-0 lg:px-16 my-16'>
         <div className='space-y-6 max-w-[580px]'>
           <div className='text-white dark:text-stone-500 uppercase tracking-[5px]'>

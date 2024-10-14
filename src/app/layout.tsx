@@ -1,5 +1,5 @@
 import { Metadata } from 'next';
-import { Roboto_Mono, Rubik } from 'next/font/google';
+import localFont from 'next/font/local';
 import * as React from 'react';
 
 import '@/styles/globals.css';
@@ -8,18 +8,36 @@ import { CoreLayout } from '@/components/CoreLayout';
 
 import { siteConfig } from '@/constant/config';
 
-const robotoMono = Roboto_Mono({
-  weight: ['400', '500'],
-  style: ['normal'],
-  subsets: ['latin'],
+const robotoMono = localFont({
+  src: [
+    {
+      path: '../../public/fonts/roboto-mono/RobotoMono-Regular.woff2',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: '../../public/fonts/roboto-mono/RobotoMono-Medium.woff2',
+      weight: '500',
+      style: 'normal',
+    },
+  ],
   display: 'swap',
   variable: '--font-roboto-mono',
 });
 
-const rubik = Rubik({
-  weight: ['400', '500'],
-  style: ['normal'],
-  subsets: ['latin'],
+const rubik = localFont({
+  src: [
+    {
+      path: '../../public/fonts/rubik/Rubik-Regular.woff2',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: '../../public/fonts/rubik/Rubik-Medium.woff2',
+      weight: '500',
+      style: 'normal',
+    },
+  ],
   display: 'swap',
   variable: '--font-rubik',
 });
@@ -68,7 +86,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang='en' className={`${robotoMono.variable} ${rubik.variable}`}>
+    <html
+      lang='en'
+      suppressHydrationWarning
+      className={`${robotoMono.variable} ${rubik.variable}`}
+    >
       <body>
         <CoreLayout>{children}</CoreLayout>
       </body>

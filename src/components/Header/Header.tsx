@@ -64,11 +64,13 @@ export const Header = () => {
               chau duong
             </h1>
           </Link>
-          <h2 className='mb-5 dark:text-neutral-400'>Software Engineer</h2>
+          <h2 className='mb-5 text-sm dark:text-neutral-400'>
+            Software Engineer
+          </h2>
           <div className='mb-1 flex items-center gap-2'>
             <HiOutlineMail
               className='text-stone-500 dark:text-neutral-400'
-              size={18}
+              size={16}
             />
             <a
               href='mailto:chau.duong1192@gmail.com'
@@ -80,7 +82,7 @@ export const Header = () => {
           <div className='flex items-center gap-2 text-sm dark:text-neutral-400'>
             <HiOutlineLocationMarker
               className='text-stone-500 dark:text-neutral-400'
-              size={18}
+              size={16}
             />
             Ho Chi Minh, Viet Nam
           </div>

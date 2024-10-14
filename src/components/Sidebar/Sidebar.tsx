@@ -16,6 +16,10 @@ const menuData = [
     href: '/about-me',
   },
   {
+    name: 'Repos',
+    href: '/repos',
+  },
+  {
     name: 'Projects',
     href: '/projects',
   },

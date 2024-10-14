@@ -17,7 +17,7 @@ export default function Error({
   }, [error]);
 
   return (
-    <Container className='flex items-center sm:px-8'>
+    <Container hasCenter>
       <section className='px-0 lg:px-16 my-16'>
         <div className='space-y-5 max-w-[580px]'>
           <div

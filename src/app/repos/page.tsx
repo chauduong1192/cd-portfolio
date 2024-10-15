@@ -14,7 +14,7 @@ async function getPosts() {
   const res = await fetch(
     `${process.env.API_URL ?? 'http://localhost:3000'}/api/repos`,
     {
-      cache: 'no-store', // Ensure fresh data on each request
+      cache: 'force-cache', // Ensure fresh data on each request
     },
   );
 
@@ -35,6 +35,7 @@ export default async function GithubRepositories() {
     }
     return posts
       .sort((a, b) => b.stargazers_count - a.stargazers_count)
+      .filter((post) => post.fork === false)
       ?.map((node) => (
         <Link
           key={node.id}

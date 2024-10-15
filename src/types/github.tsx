@@ -5,4 +5,5 @@ export interface GithubRepo {
   description: string;
   stargazers_count: number;
   topics: string[];
+  fork: boolean;
 }

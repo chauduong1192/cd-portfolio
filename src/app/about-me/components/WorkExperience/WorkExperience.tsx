@@ -25,7 +25,7 @@ export const WorkExperience = ({ workExperience }: WorkExperienceProps) => {
                     height={40}
                     useSkeleton
                     classNames={{
-                      image: 'rounded-full size-10 bg-stone-500',
+                      image: 'rounded-full size-10 bg-slate-gray',
                     }}
                     alt={company}
                     src={logo}
@@ -38,7 +38,7 @@ export const WorkExperience = ({ workExperience }: WorkExperienceProps) => {
                 >
                   {companyUrl ? (
                     <a
-                      className='text-lg leading-6 dark:text-gray-200 text-neutral-700 font-medium'
+                      className='text-lg leading-6 dark:text-gray-lighter text-gray-dark font-medium'
                       href={companyUrl}
                       target='_blank'
                       rel='noopener noreferrer'
@@ -46,22 +46,22 @@ export const WorkExperience = ({ workExperience }: WorkExperienceProps) => {
                       {company}
                     </a>
                   ) : (
-                    <div className='leading-none text-lg dark:text-gray-200 text-neutral-700 font-medium'>
+                    <div className='leading-none text-lg dark:text-gray-lighter text-gray-dark font-medium'>
                       {company}
                     </div>
                   )}
-                  <div className='font-normal text-neutral-700 dark:text-gray-200'>
+                  <div className='font-normal text-gray-dark dark:text-gray-lighter'>
                     {role}
                   </div>
                 </div>
               </div>
-              <div className='font-normal text-neutral-700/75 dark:text-gray-200/75'>
+              <div className='font-normal text-gray-dark/75 dark:text-gray-lighter/75'>
                 {duration}
               </div>
               <ul className='mt-2 ml-8 list-disc flex flex-col gap-1'>
                 {experience.map((desc, idx) => (
                   <li key={idx}>
-                    <div className='dark:text-neutral-400 inline text-balance'>
+                    <div className='dark:text-gray-medium inline text-balance'>
                       {desc}
                     </div>
                   </li>

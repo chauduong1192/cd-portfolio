@@ -13,9 +13,9 @@ export const Skills = ({ skills }: SkillsProps) => (
     <ul className='ml-4 list-disc'>
       {skills.map(({ title, skills }, idx) => (
         <li key={idx}>
-          <div className='text-neutral-700 font-medium text-lg inline dark:text-gray-200'>
+          <div className='text-gray-dark font-medium text-lg inline dark:text-gray-lighter'>
             {title}:{' '}
-            <span className='text-base font-normal text-stone-500 dark:text-neutral-400'>
+            <span className='text-base font-normal text-slate-gray dark:text-gray-medium'>
               {skills}
             </span>
           </div>

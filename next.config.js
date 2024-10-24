@@ -1,5 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // Configure `pageExtensions` to include markdown and MDX files
+  pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
   eslint: {
     dirs: ['src'],
   },
@@ -8,14 +10,14 @@ const nextConfig = {
   swcMinify: true,
 
   // Uncoment to add domain whitelist
-  // images: {
-  //   remotePatterns: [
-  //     {
-  //       protocol: 'https',
-  //       hostname: 'res.cloudinary.com',
-  //     },
-  //   ]
-  // },
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'images.ctfassets.net',
+      },
+    ],
+  },
 
   webpack(config) {
     // Grab the existing rule that handles SVG imports

@@ -20,8 +20,12 @@ const menuData = [
     href: '/repos',
   },
   {
-    name: 'Projects',
-    href: '/projects',
+    name: 'Blogs',
+    href: '/blogs',
+  },
+  {
+    name: 'Shorts',
+    href: '/shorts',
   },
   {
     name: 'Contact',
@@ -30,22 +34,22 @@ const menuData = [
   },
 ];
 const linkClassName = `
-  text-zinc-500
+  text-gray
   uppercase
   py-1
   font-medium
   tracking-widest
   text-center
   border-transparent
-  hover:border-neutral-700
-  hover:text-neutral-700
+  hover:border-gray-dark
+  hover:text-gray-dark
   border-solid
   border-b-2
   inline-block
   whitespace-no-wrap
   cursor-pointer
-  dark:hover:text-gray-200
-  dark:hover:border-gray-200
+  dark:hover:text-gray-lighter
+  dark:hover:border-gray-lighter
 `;
 
 export const Sidebar = ({ closeMenu }: { closeMenu?: () => void }) => {
@@ -60,7 +64,7 @@ export const Sidebar = ({ closeMenu }: { closeMenu?: () => void }) => {
                 onClick={closeMenu}
                 href={href}
                 className={cn(linkClassName, {
-                  'text-neutral-700 dark:text-gray-200': href === pathName,
+                  'text-gray-dark dark:text-gray-lighter': href === pathName,
                 })}
               >
                 {name}

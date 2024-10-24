@@ -41,7 +41,7 @@ export const CoreLayout = ({ children }: CoreLayoutProps) => {
       <Header />
       <main
         ref={ref}
-        className='lg:ml-[300px] min-h-screen flex justify-center dark:bg-zinc-900'
+        className='lg:ml-[300px] min-h-screen flex justify-center dark:bg-black-default'
       >
         {children}
         {isShowGoToTop && <GoToTop />}

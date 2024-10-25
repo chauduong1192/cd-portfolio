@@ -1,3 +1,4 @@
+import { Short, ShortBySlug } from '@/types';
 import fs from 'fs';
 import matter from 'gray-matter';
 import path from 'path';
@@ -20,7 +21,7 @@ export function getAllShortsData() {
     };
   });
 
-  return allShortsData;
+  return allShortsData as Short[];
 }
 
 export const getShortBySlug = async (slug: string) => {
@@ -29,7 +30,10 @@ export const getShortBySlug = async (slug: string) => {
 
   const fileContent = fs.readFileSync(filePath, { encoding: 'utf8' });
 
-  const { data } = matter(fileContent);
+  const { data, content } = matter(fileContent);
 
-  return { meta: { ...data, slug: realSlug }, content: fileContent };
+  return {
+    meta: { ...data, slug: realSlug },
+    content,
+  } as ShortBySlug;
 };

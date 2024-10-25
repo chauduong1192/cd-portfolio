@@ -1,7 +1,14 @@
 'use client';
 
-import { PropsWithChildren, useEffect, useRef, useState } from 'react';
+import {
+  PropsWithChildren,
+  Suspense,
+  useEffect,
+  useRef,
+  useState,
+} from 'react';
 
+import Loading from '@/app/loading';
 import { GoToTop } from '@/components/GoToTop';
 import { Header } from '@/components/Header';
 import { ToggleTheme } from '@/components/ToggleTheme';
@@ -43,7 +50,7 @@ export const CoreLayout = ({ children }: CoreLayoutProps) => {
         ref={ref}
         className='lg:ml-[300px] min-h-screen flex justify-center dark:bg-black-default'
       >
-        {children}
+        <Suspense fallback={<Loading />}>{children}</Suspense>
         {isShowGoToTop && <GoToTop />}
         <div className='fixed bottom-8 right-6 hidden lg:block'>
           <ToggleTheme />

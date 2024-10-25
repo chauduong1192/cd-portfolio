@@ -51,7 +51,8 @@ export default async function GithubRepositories() {
         headingText='Github repositories'
         title='My open-source projects'
         description="Here's a list of my open-source projects hosted on GitHub."
-        withHr={false}
+        withHr={true}
+        className='gap-0'
       >
         <div
           className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 2xl:grid-cols-4 gap-4

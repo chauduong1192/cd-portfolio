@@ -1,9 +1,14 @@
 import Link from 'next/link';
-import { ComponentPropsWithRef, ReactNode } from 'react';
+import {
+  ComponentPropsWithoutRef,
+  ComponentPropsWithRef,
+  ReactNode,
+} from 'react';
 import { FaGithub } from 'react-icons/fa';
 import { HiOutlineStar } from 'react-icons/hi';
 
 import { Meteors } from '@/components/Meteors';
+import { cn } from '@/utils/classnames';
 
 type CardProps = ComponentPropsWithRef<'a'> & {
   href: string;
@@ -13,6 +18,7 @@ type CardProps = ComponentPropsWithRef<'a'> & {
   tags?: string[];
   count?: number | ReactNode;
   external?: boolean;
+  contentProps?: ComponentPropsWithoutRef<'div'>;
 };
 
 export const Card = ({
@@ -23,6 +29,7 @@ export const Card = ({
   tags,
   external = true,
   count,
+  contentProps,
   ...props
 }: CardProps) => {
   return (
@@ -39,11 +46,15 @@ export const Card = ({
           blur-3xl'
       />
       <div
-        className='relative w-full h-full p-4 gap-2 flex flex-col justify-between overflow-hidden
-          bg-white dark:bg-white/95 rounded-md'
+        {...contentProps}
+        className={cn(
+          `relative w-full h-full p-4 gap-2 flex flex-col justify-between overflow-hidden
+          bg-white dark:bg-white/95 rounded-md`,
+          contentProps?.className,
+        )}
       >
         <div className='flex items-center gap-2'>
-          <div className='text-sm font-medium grow line-clamp-1 text-black-default font-roboto-mono'>
+          <div className='text-base font-medium grow line-clamp-1 text-black-default font-roboto-mono'>
             {name}
           </div>
           {icon ?? (

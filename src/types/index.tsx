@@ -28,34 +28,17 @@ export interface GithubRepo {
   fork: boolean;
 }
 
-export interface Root {
-  total: number;
-  skip: number;
-  limit: number;
-  items: Item[];
-}
-
-export interface Item {
-  fields: Fields;
-}
-
-export interface Fields {
+export type Short = {
   title: string;
+  subTitle: string;
+  description: string;
+  tags: string[];
   slug: string;
-  author: Author;
-  publishDate: string;
-  body: any;
-  tags: Tag[];
-}
+  date: Date;
+  username: string;
+};
 
-export interface Tag {
-  name: string;
-  slug: string;
-}
-
-export interface Author {
-  fields: {
-    name: string;
-    websiteUrl: string;
-  };
-}
+export type ShortBySlug = {
+  meta: Short;
+  content: string;
+};

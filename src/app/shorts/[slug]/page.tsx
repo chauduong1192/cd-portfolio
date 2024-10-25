@@ -1,10 +1,8 @@
 import { Container } from '@/components/Container';
 import { CustomMDX } from '@/components/MDX';
-
-// import Welcome from '@/markdown/shorts/short-1.mdx';
 import { getShortBySlug } from '@/utils/shorts';
 
-const getPageContent = async (slug) => {
+const getPageContent = async (slug: string) => {
   const { meta, content } = await getShortBySlug(slug);
   return { meta, content };
 };
@@ -24,8 +22,6 @@ export default async function ShortDetails({
   params: { slug: string };
 }) {
   const { content } = await getPageContent(params.slug);
-  console.log('content', content);
-
   return (
     <Container title='Shorts' subTitle='Showcase of my shorts'>
       {/* <div>{content}</div> */}

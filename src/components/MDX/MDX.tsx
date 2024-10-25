@@ -1,18 +1,30 @@
-import { MDXRemote } from 'next-mdx-remote/rsc';
+import { MDXRemote, MDXRemoteProps } from 'next-mdx-remote/rsc';
+import remarkGfm from 'remark-gfm';
 
 const components = {
-  h1: (props) => (
+  h1: (props: React.HTMLAttributes<HTMLHeadingElement>) => (
     <h1 {...props} className='text-5xl text-gray-700'>
       {props.children}
     </h1>
   ),
 };
 
-export function CustomMDX(props) {
+type CustomMDXProps = MDXRemoteProps;
+
+export function CustomMDX(props: CustomMDXProps) {
   return (
     <MDXRemote
-      {...props}
       components={{ ...components, ...(props.components || {}) }}
+      options={{
+        mdxOptions: {
+          remarkPlugins: [
+            remarkGfm,
+            ...(props.options?.mdxOptions?.remarkPlugins || []),
+          ],
+          rehypePlugins: [...(props.options?.mdxOptions?.rehypePlugins || [])],
+        },
+      }}
+      {...props}
     />
   );
 }

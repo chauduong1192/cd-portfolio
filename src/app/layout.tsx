@@ -3,6 +3,7 @@ import localFont from 'next/font/local';
 import * as React from 'react';
 
 import '@/styles/globals.css';
+import '@/styles/mdx.css';
 
 import { CoreLayout } from '@/components/CoreLayout';
 
@@ -35,6 +36,11 @@ const rubik = localFont({
     {
       path: '../../public/fonts/rubik/Rubik-Medium.woff2',
       weight: '500',
+      style: 'normal',
+    },
+    {
+      path: '../../public/fonts/rubik/Rubik-SemiBold.woff2',
+      weight: '600',
       style: 'normal',
     },
   ],

@@ -8,6 +8,7 @@ import { FaGithub } from 'react-icons/fa';
 import { HiOutlineStar } from 'react-icons/hi';
 
 import { Meteors } from '@/components/Meteors';
+
 import { cn } from '@/utils/classnames';
 
 type CardProps = ComponentPropsWithRef<'a'> & {
@@ -42,7 +43,7 @@ export const Card = ({
     >
       <div
         className='absolute inset-0 h-full w-full bg-gradient-to-r from-gray-slate
-          to-black-default/20 transform scale-[0.80] bg-gray-lighter/20 rounded-full
+          to-black-light/20 transform scale-[0.80] bg-gray-lighter/20 rounded-full
           blur-3xl'
       />
       <div
@@ -54,7 +55,7 @@ export const Card = ({
         )}
       >
         <div className='flex items-center gap-2'>
-          <div className='text-base font-medium grow line-clamp-1 text-black-default font-roboto-mono'>
+          <div className='text-base font-medium grow line-clamp-1 text-black-light font-roboto-mono'>
             {name}
           </div>
           {icon ?? (

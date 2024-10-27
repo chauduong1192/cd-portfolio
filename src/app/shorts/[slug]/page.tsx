@@ -1,5 +1,7 @@
 import { Container } from '@/components/Container';
+import { HeadingSection } from '@/components/HeadingSection';
 import { CustomMDX } from '@/components/MDX';
+
 import { getShortBySlug } from '@/utils/shorts';
 
 const getPageContent = async (slug: string) => {
@@ -21,12 +23,21 @@ export default async function ShortDetails({
 }: {
   params: { slug: string };
 }) {
-  const { content } = await getPageContent(params.slug);
+  const { content, meta } = await getPageContent(params.slug);
   return (
-    <Container title='Shorts' subTitle='Showcase of my shorts'>
-      {/* <div>{content}</div> */}
-      <CustomMDX source={content} />
-      {/* {content} */}
+    <Container className='max-w-5xl mx-auto'>
+      <HeadingSection
+        withHr={false}
+        headingText={meta?.title}
+        title={meta?.subTitle}
+        description={meta?.description}
+        className='gap-0'
+        headingClasses='max-w-3xl'
+      >
+        <article className='mdx prose dark:prose-dark'>
+          <CustomMDX source={content} />
+        </article>
+      </HeadingSection>
     </Container>
   );
 }

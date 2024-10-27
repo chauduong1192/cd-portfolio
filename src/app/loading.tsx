@@ -1,9 +1,11 @@
 'use client';
 
-import { Animate } from '@/components/Animate';
-import { fadeIn } from '@/utils/framer-variants';
 import { motion, useAnimate } from 'framer-motion';
 import { useEffect, useRef } from 'react';
+
+import { Animate } from '@/components/Animate';
+
+import { fadeIn } from '@/utils/framer-variants';
 
 export default function Loading() {
   const [scope, animate] = useAnimate();

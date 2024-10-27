@@ -8,7 +8,7 @@ import { cn } from '@/utils/classnames';
 export const TypewriterEffect = ({
   words,
   className,
-  cursorClassName,
+  // cursorClassName,
 }: {
   words: {
     text: string;

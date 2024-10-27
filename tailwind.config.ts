@@ -4,7 +4,7 @@ import { fontFamily } from 'tailwindcss/defaultTheme';
 
 export default withTV({
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
-  darkMode: 'selector',
+  darkMode: 'class',
   theme: {
     extend: {
       fontFamily: {
@@ -17,11 +17,12 @@ export default withTV({
           light: 'rgb(var(--tw-color-gray-light) / <alpha-value>)',
           default: 'rgb(var(--tw-color-gray) / <alpha-value>)',
           medium: 'rgb(var(--tw-color-gray-medium) / <alpha-value>)',
+          high: 'rgb(var(--tw-color-gray-high) / <alpha-value>)',
           slate: 'rgb(var(--tw-color-gray-slate) / <alpha-value>)',
           dark: 'rgb(var(--tw-color-gray-dark) / <alpha-value>)',
         },
         black: {
-          default: 'rgb(var(--tw-color-black) / <alpha-value>)',
+          light: 'rgb(var(--tw-color-black-light) / <alpha-value>)',
           medium: 'rgb(var(--tw-color-black-medium) / <alpha-value>)',
         },
       },

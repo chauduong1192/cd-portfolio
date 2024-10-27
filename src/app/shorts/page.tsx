@@ -1,7 +1,8 @@
+import { HiCode } from 'react-icons/hi';
+
 import { Card } from '@/components/Card';
 import { Container } from '@/components/Container';
 import { HeadingSection } from '@/components/HeadingSection';
-import { HiCode } from 'react-icons/hi';
 
 import { getAllShortsData } from '@/utils/shorts';
 

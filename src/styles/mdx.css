@@ -1,0 +1,144 @@
+.mdx.prose {
+  width: 100%;
+  max-width: max-content;
+}
+
+.mdx.prose strong {
+  @apply font-semibold text-gray-dark dark:text-white;
+}
+
+/* #region  /**=========== Table =========== */
+.mdx.prose table {
+  @apply w-full overflow-auto border border-gray-medium bg-gray-lighter text-gray-dark;
+  max-width: max-content;
+}
+
+.mdx.prose th,
+.mdx.prose td {
+  @apply border p-3 text-left;
+}
+
+.mdx.prose th {
+  @apply bg-gray-high font-medium text-black-light;
+}
+
+.mdx.prose tr:nth-child(even) {
+  @apply bg-gray-lighter;
+}
+
+.mdx.prose tr:nth-child(odd) {
+  @apply bg-gray-light;
+}
+
+.mdx.prose thead {
+  @apply border-b border-gray-dark;
+}
+
+.mdx.prose tbody tr:last-child {
+  @apply border-b border-gray-dark;
+}
+
+/* #endregion  /**=========== Table =========== */
+
+/* #region  /**=========== List =========== */
+.mdx.prose :where(ul, ol) > li {
+  @apply text-gray-slate dark:text-gray-medium;
+}
+.mdx.prose :where(ul, ol) > li::marker {
+  @apply text-gray-slate dark:text-gray-medium;
+}
+/* #endregion  /**=========== List =========== */
+
+/* #region  /**=========== Code =========== */
+.mdx.prose pre code {
+  @apply dark:text-gray-dark;
+}
+.mdx.prose code {
+  @apply text-sm text-gray-dark dark:text-white;
+}
+
+.prose pre > code {
+  @apply grid;
+  counter-reset: line;
+}
+
+[data-line] {
+  @apply border-l-2 border-l-transparent px-6;
+}
+[data-highlighted-line] {
+  @apply border-l-pink-300 bg-pink-300/10;
+}
+
+/* #endregion  /**=========== Code =========== */
+
+/* #region  /**=========== Pre =========== */
+.mdx.prose [data-rehype-pretty-code-figure] button svg {
+  @apply text-white;
+}
+.mdx.prose [data-rehype-pretty-code-figure] button:hover {
+  @apply bg-gray-medium/50;
+}
+
+/* #endregion  /**=========== Pre =========== */
+
+/* #region  /**=========== Paragraph =========== */
+.mdx.prose p {
+  @apply mb-4 text-base text-gray-slate dark:text-gray-medium;
+}
+/* #endregion  /**=========== Paragraph =========== */
+
+/* #region  /**=========== Heading =========== */
+.mdx.prose :where(h1, h2, h3, h4) > a {
+  border-bottom: none;
+}
+
+.mdx.prose :where(h1, h2, h3, h4, h5, h6) {
+  @apply relative w-fit font-medium text-gray-dark dark:text-gray-lighter;
+}
+
+.mdx.prose :where(h1, h2) {
+  @apply mb-4 mt-16;
+}
+.mdx.prose :where(h3, h4, h5, h6) {
+  @apply mb-3;
+}
+
+.mdx.prose h1 {
+  @apply text-3xl;
+}
+.mdx.prose h2 {
+  @apply text-2xl;
+}
+.mdx.prose h3 {
+  @apply text-xl;
+}
+.mdx.prose h4 {
+  @apply text-lg;
+}
+/* #endregion  /**=========== Heading =========== */
+
+/* #region  /**=========== Hash Anchor =========== */
+.has-anchor {
+  @apply absolute inset-y-0 w-full;
+  background-image: none;
+  transition: none;
+}
+.has-anchor:hover {
+  background-image: linear-gradient(
+    to right,
+    var(--color-gray-light),
+    var(--color-gray),
+    var(--color-gray-medium)
+  );
+  background-size: 100% 2px;
+}
+.has-anchor:hover:after,
+.has-anchor:focus:after {
+  visibility: visible;
+}
+
+.has-anchor:after {
+  @apply invisible absolute -right-5 top-1/2 -translate-y-1/2 text-lg;
+  content: '#';
+}
+/* #endregion  /**======== Hash Anchor =========== */

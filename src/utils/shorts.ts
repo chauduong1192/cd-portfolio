@@ -1,7 +1,8 @@
-import { Short, ShortBySlug } from '@/types';
 import fs from 'fs';
 import matter from 'gray-matter';
 import path from 'path';
+
+import { Short, ShortBySlug } from '@/types';
 
 const shortsDirectory = path.join(process.cwd(), 'src/markdown/shorts');
 

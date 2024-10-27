@@ -9,6 +9,7 @@ type HeadingProps = Omit<ComponentPropsWithRef<'div'>, 'title'> & {
   title: string | { text: string; className?: string }[];
   description: string;
   withHr?: boolean;
+  headingClasses?: string;
 };
 
 export const HeadingSection = ({
@@ -17,6 +18,7 @@ export const HeadingSection = ({
   description,
   children,
   withHr = true,
+  headingClasses,
   ...props
 }: HeadingProps) => (
   <section
@@ -26,7 +28,7 @@ export const HeadingSection = ({
       props.className,
     )}
   >
-    <div className='space-y-6 max-w-[580px]'>
+    <div className={cn('space-y-6 max-w-[580px]', headingClasses)}>
       <div className='text-white dark:text-slate-gray uppercase tracking-[5px]'>
         {headingText}
       </div>

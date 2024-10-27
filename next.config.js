@@ -1,3 +1,5 @@
+const path = require('path');
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   // Configure `pageExtensions` to include markdown and MDX files
@@ -52,4 +54,10 @@ const nextConfig = {
   },
 };
 
-module.exports = nextConfig;
+// Hot reload markdown files
+const withRemoteRefresh = require('next-remote-refresh')({
+  // Configure your Next.js project to watch the files you want to refresh
+  paths: [path.resolve(__dirname, 'src', 'markdown')],
+});
+
+module.exports = withRemoteRefresh(nextConfig);

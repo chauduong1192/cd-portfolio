@@ -8,10 +8,11 @@ import {
   useState,
 } from 'react';
 
-import Loading from '@/app/loading';
 import { GoToTop } from '@/components/GoToTop';
 import { Header } from '@/components/Header';
 import { ToggleTheme } from '@/components/ToggleTheme';
+
+import Loading from '@/app/loading';
 
 type CoreLayoutProps = PropsWithChildren;
 
@@ -48,7 +49,7 @@ export const CoreLayout = ({ children }: CoreLayoutProps) => {
       <Header />
       <main
         ref={ref}
-        className='lg:ml-[300px] min-h-screen flex justify-center dark:bg-black-default'
+        className='lg:ml-[300px] min-h-screen flex justify-center dark:bg-black-light'
       >
         <Suspense fallback={<Loading />}>{children}</Suspense>
         {isShowGoToTop && <GoToTop />}

@@ -1,0 +1,276 @@
+---
+title: CRUD Cart Example
+subTitle: A simple CRUD cart implementation using React and Context API
+description: This example demonstrates a simple CRUD (Create, Read, Update, Delete) cart implementation using React and Context API.
+date: 2024-31-10
+username: chau duong
+tags: ['react', 'context-api', 'crud', 'cart']
+---
+
+# CRUD Cart Example
+
+This example demonstrates a simple CRUD (Create, Read, Update, Delete) cart implementation using React and Context API.
+
+## Cart Context
+
+First, let's create our cart context and reducer:
+
+```tsx
+import React, { createContext, useContext, useReducer, ReactNode } from 'react';
+
+// Define the shape of our cart item
+export interface CartItem {
+  id: number;
+  name: string;
+  price: number;
+  quantity: number;
+}
+
+// Define the shape of our cart state
+interface CartState {
+  items: CartItem[];
+}
+
+// Define the types of actions we can perform on our cart
+type CartAction =
+  | { type: 'ADD_ITEM'; payload: CartItem }
+  | { type: 'UPDATE_QUANTITY'; payload: { id: number; quantity: number } }
+  | { type: 'REMOVE_ITEM'; payload: number };
+
+// Define the initial state of our cart
+const initialState: CartState = {
+  items: [],
+};
+
+// Create the cart context
+const CartContext = createContext<
+  | {
+      state: CartState;
+      dispatch: React.Dispatch<CartAction>;
+    }
+  | undefined
+>(undefined);
+
+// Create the cart reducer
+function cartReducer(state: CartState, action: CartAction): CartState {
+  switch (action.type) {
+    case 'ADD_ITEM':
+      const existingItem = state.items.find(
+        (item) => item.id === action.payload.id,
+      );
+      if (existingItem) {
+        return {
+          ...state,
+          items: state.items.map((item) =>
+            item.id === action.payload.id
+              ? { ...item, quantity: item.quantity + 1 }
+              : item,
+          ),
+        };
+      }
+      return {
+        ...state,
+        items: [...state.items, action.payload],
+      };
+    case 'UPDATE_QUANTITY':
+      return {
+        ...state,
+        items: state.items
+          .map((item) =>
+            item.id === action.payload.id
+              ? { ...item, quantity: action.payload.quantity }
+              : item,
+          )
+          .filter((item) => item.quantity > 0),
+      };
+    case 'REMOVE_ITEM':
+      return {
+        ...state,
+        items: state.items.filter((item) => item.id !== action.payload),
+      };
+    default:
+      return state;
+  }
+}
+
+// Create a provider component
+export function CartProvider({ children }: { children: ReactNode }) {
+  const [state, dispatch] = useReducer(cartReducer, initialState);
+
+  return (
+    <CartContext.Provider value={{ state, dispatch }}>
+      {children}
+    </CartContext.Provider>
+  );
+}
+
+// Create a custom hook to use the cart context
+export function useCart() {
+  const context = useContext(CartContext);
+  if (context === undefined) {
+    throw new Error('useCart must be used within a CartProvider');
+  }
+  return context;
+}
+```
+
+## Cart Component
+
+Now, let's create our main cart component:
+
+```tsx
+import { useState } from 'react';
+import { Plus, Minus, X } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import {
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card';
+import { CartProvider, useCart, CartItem } from './cart-context';
+
+function CartComponent() {
+  const { state, dispatch } = useCart();
+  const [newItem, setNewItem] = useState({ name: '', price: '' });
+
+  const addItem = () => {
+    if (newItem.name && newItem.price) {
+      dispatch({
+        type: 'ADD_ITEM',
+        payload: {
+          id: Date.now(),
+          name: newItem.name,
+          price: parseFloat(newItem.price),
+          quantity: 1,
+        },
+      });
+      setNewItem({ name: '', price: '' });
+    }
+  };
+
+  const updateQuantity = (id: number, quantity: number) => {
+    dispatch({ type: 'UPDATE_QUANTITY', payload: { id, quantity } });
+  };
+
+  const removeItem = (id: number) => {
+    dispatch({ type: 'REMOVE_ITEM', payload: id });
+  };
+
+  const total = state.items.reduce(
+    (sum, item) => sum + item.price * item.quantity,
+    0,
+  );
+
+  return (
+    <Card className='w-full max-w-md mx-auto'>
+      <CardHeader>
+        <CardTitle>Shopping Cart</CardTitle>
+      </CardHeader>
+      <CardContent className='space-y-4'>
+        <div className='flex space-x-2'>
+          <Input
+            type='text'
+            placeholder='Item name'
+            value={newItem.name}
+            onChange={(e) => setNewItem({ ...newItem, name: e.target.value })}
+          />
+          <Input
+            type='number'
+            placeholder='Price'
+            value={newItem.price}
+            onChange={(e) => setNewItem({ ...newItem, price: e.target.value })}
+          />
+          <Button onClick={addItem}>Add</Button>
+        </div>
+        {state.items.map((item: CartItem) => (
+          <div
+            key={item.id}
+            className='flex items-center justify-between space-x-2'
+          >
+            <span className='flex-grow'>
+              {item.name} - ${item.price.toFixed(2)}
+            </span>
+            <div className='flex items-center space-x-2'>
+              <Button
+                size='icon'
+                variant='outline'
+                onClick={() => updateQuantity(item.id, item.quantity - 1)}
+              >
+                <Minus className='h-4 w-4' />
+              </Button>
+              <span>{item.quantity}</span>
+              <Button
+                size='icon'
+                variant='outline'
+                onClick={() => updateQuantity(item.id, item.quantity + 1)}
+              >
+                <Plus className='h-4 w-4' />
+              </Button>
+              <Button
+                size='icon'
+                variant='destructive'
+                onClick={() => removeItem(item.id)}
+              >
+                <X className='h-4 w-4' />
+              </Button>
+            </div>
+          </div>
+        ))}
+      </CardContent>
+      <CardFooter className='justify-between'>
+        <strong>Total:</strong>
+        <span>${total.toFixed(2)}</span>
+      </CardFooter>
+    </Card>
+  );
+}
+
+export default function CRUDCart() {
+  return (
+    <CartProvider>
+      <CartComponent />
+    </CartProvider>
+  );
+}
+```
+
+## Usage
+
+To use this CRUD cart in your MDX file, you can simply import and render the `CRUDCart` component:
+
+```tsx
+import CRUDCart from './CRUDCart'
+
+# CRUD Cart Demo
+
+Here's our CRUD cart in action:
+
+<CRUDCart />
+```
+
+This will render the CRUD cart component in your MDX document, allowing users to interact with it directly in the documentation.
+
+## Explanation
+
+This CRUD cart implementation demonstrates the following operations:
+
+1. **Create**: Users can add new items to the cart using the input fields at the top.
+2. **Read**: The component displays all items currently in the cart, including their names, prices, and quantities.
+3. **Update**: Users can update the quantity of each item using the plus and minus buttons.
+4. **Delete**: Users can remove items from the cart using the X button.
+
+The component also calculates and displays the total price of all items in the cart.
+
+Key features of this implementation:
+
+- Uses React's Context API and `useReducer` hook for state management.
+- Implements all CRUD operations: add item (create), display items (read), update quantity (update), and remove item (delete).
+- Calculates the total price of items in the cart.
+- Uses Tailwind CSS for styling and shadcn/ui components for a clean, modern look.
+- Includes input validation to ensure that items have both a name and a price before being added to the cart.
+- Prevents negative quantities by setting a minimum of 0 and removing items when their quantity reaches 0.
+
+This example provides a foundation that you can build upon or modify to fit your specific needs. You could extend it by adding features like persisting the cart state to local storage, integrating with a backend API, or adding more complex product options.

@@ -1,19 +1,14 @@
-import dayjs from 'dayjs';
-
 import { Container } from '@/components/Container';
-import NextImage from '@/components/NextImage';
 
 export const metadata = {
   title: 'Blogs',
 };
 
 export default async function Blogs() {
-  const blogs: any = [];
-
   return (
     <Container title='Blogs' subTitle='Showcase of my blogs'>
-      <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-4'>
-        {blogs?.map((blog: any) => (
+      {/* <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-4'>
+        {blogs?.map((blog) => (
           <div
             key={blog.sys.id}
             className='w-full mx-auto bg-neutral-200 rounded-xl shadow-lg overflow-hidden flex flex-col
@@ -48,8 +43,7 @@ export default async function Blogs() {
             </div>
           </div>
         ))}
-        {/* </div> */}
-      </div>
+      </div> */}
     </Container>
   );
 }

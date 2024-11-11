@@ -12,31 +12,6 @@ import { ToggleTheme } from '@/components/ToggleTheme';
 import { cn } from '@/utils/classnames';
 import { fadeInY } from '@/utils/framer-variants';
 
-const words = [
-  {
-    text: 'Chau',
-  },
-  {
-    text: 'Duong',
-  },
-  // {
-  //   text: 'engaging',
-  // },
-  // {
-  //   text: 'and',
-  // },
-  // {
-  //   text: 'performant',
-  // },
-  // {
-  //   text: 'front-end',
-  // },
-  // {
-  //   text: 'experiences.',
-  //   className: 'text-blue-500 dark:text-blue-500',
-  // },
-];
-
 export const Header = () => {
   const [isShowMenu, setShowMenu] = useState(false);
 

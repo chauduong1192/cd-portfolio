@@ -11,6 +11,7 @@ const cacheMiddleware = cache({
   cacheControl: 'max-age=3600',
 });
 
+// @typescript-eslint/no-explicit-any
 // Common function to fetch data and handle errors
 async function fetchData<T>(fetchFn: () => Promise<T>, c: any) {
   try {

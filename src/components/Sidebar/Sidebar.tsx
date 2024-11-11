@@ -9,7 +9,7 @@ import { fadeInX } from '@/utils/framer-variants';
 const menuData = [
   {
     name: 'Home',
-    href: '/',
+    href: '/home',
   },
   {
     name: 'About me',
@@ -19,10 +19,10 @@ const menuData = [
     name: 'Repos',
     href: '/repos',
   },
-  {
-    name: 'Blogs',
-    href: '/blogs',
-  },
+  // {
+  //   name: 'Blogs',
+  //   href: '/blogs',
+  // },
   {
     name: 'Shorts',
     href: '/shorts',
@@ -54,6 +54,7 @@ const linkClassName = `
 
 export const Sidebar = ({ closeMenu }: { closeMenu?: () => void }) => {
   const pathName = usePathname();
+  const pathNameArr = pathName === '/' ? '/home' : pathName;
   return (
     <Animate variants={fadeInX('left')}>
       <nav>
@@ -62,9 +63,10 @@ export const Sidebar = ({ closeMenu }: { closeMenu?: () => void }) => {
             <li key={idx} className='my-2'>
               <Link
                 onClick={closeMenu}
-                href={href}
+                href={href === '/home' ? '/' : href}
                 className={cn(linkClassName, {
-                  'text-gray-dark dark:text-gray-lighter': href === pathName,
+                  'text-gray-dark dark:text-gray-lighter':
+                    pathNameArr.indexOf(href) >= 0,
                 })}
               >
                 {name}

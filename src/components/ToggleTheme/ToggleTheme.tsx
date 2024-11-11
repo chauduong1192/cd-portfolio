@@ -75,8 +75,8 @@ export const ToggleTheme = () => {
           `relative size-6 scale-100 rounded-full border-none bg-transparent
           shadow-dark-mode transition-all duration-[.45s]`,
           {
-            'border-4 scale-[.55] overflow-visible shadow-none bg-gray-200 border-gray-200':
-              isDarkTheme,
+            [`border-4 scale-[.55] overflow-visible shadow-none bg-gray-lighter
+            border-gray-lighter`]: isDarkTheme,
           },
         )}
       >

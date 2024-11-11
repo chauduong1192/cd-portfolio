@@ -12,7 +12,7 @@ export const TitleSection = ({
   <div className='flex gap-3 sm:gap-4 flex-col'>
     <div
       className={cn(
-        'text-2xl text-neutral-700 underline font-medium dark:text-gray-200',
+        'text-2xl text-gray-dark underline font-medium dark:text-gray-lighter',
         className,
       )}
     >

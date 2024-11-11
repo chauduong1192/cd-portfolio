@@ -1,10 +1,8 @@
-import Link from 'next/link';
-import { FaGithub } from 'react-icons/fa';
-import { HiOutlineStar } from 'react-icons/hi';
-
+import { Card } from '@/components/Card';
 import { Container } from '@/components/Container';
+import { HeadingSection } from '@/components/HeadingSection';
 
-import { GithubRepo } from '@/types/github';
+import { GithubRepo } from '@/types';
 
 export const metadata = {
   title: 'Github repositories',
@@ -36,52 +34,33 @@ export default async function GithubRepositories() {
     return posts
       .sort((a, b) => b.stargazers_count - a.stargazers_count)
       .filter((post) => post.fork === false)
-      ?.map((node) => (
-        <Link
-          key={node.id}
-          className='flex flex-col justify-between bg-white dark:bg-white/95 rounded-md p-4 gap-2
-            overflow-hidden'
-          href={node.html_url}
-          target='_blank'
-        >
-          <div className='flex items-center gap-2'>
-            <div className='text-sm font-medium grow line-clamp-1 text-zinc-900 font-roboto-mono'>
-              {node.name}
-            </div>
-            <FaGithub
-              size={16}
-              className='text-stone-500 dark:text-neutral-400 min-w-4'
-            />
-          </div>
-          <div className='text-balance line-clamp-2 w-full text-sm'>
-            {node.description}
-          </div>
-          <div className='flex justify-between gap-2 items-center'>
-            <div className='flex flex-row w-full gap-1'>
-              {node.topics?.slice(0, 3).map((topic: string) => (
-                <div
-                  key={topic}
-                  className='rounded bg-gray-200 py-1 px-2 text-xs'
-                >
-                  {topic}
-                </div>
-              ))}
-            </div>
-            <div className='flex items-center gap-1'>
-              <HiOutlineStar size={16} />
-              <div className='text-sm font-roboto-mono font-medium'>
-                {node.stargazers_count}
-              </div>
-            </div>
-          </div>
-        </Link>
+      ?.map(({ html_url, name, description, topics, stargazers_count }) => (
+        <Card
+          key={name}
+          href={html_url}
+          name={name}
+          description={description}
+          tags={topics.slice(0, 3)}
+          count={stargazers_count}
+        />
       ));
   };
   return (
-    <Container title='Repositories' subTitle='Showcase of my github repository'>
-      <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4'>
-        {renderGitHubList()}
-      </div>
+    <Container>
+      <HeadingSection
+        headingText='Github repositories'
+        title='My open-source projects'
+        description="Here's a list of my open-source projects hosted on GitHub."
+        withHr={true}
+        className='gap-0'
+      >
+        <div
+          className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 2xl:grid-cols-4 gap-4
+            auto-rows-fr'
+        >
+          {renderGitHubList()}
+        </div>
+      </HeadingSection>
     </Container>
   );
 }

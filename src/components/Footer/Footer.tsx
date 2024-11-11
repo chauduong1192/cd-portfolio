@@ -2,7 +2,7 @@ import { FaFacebook, FaGithub, FaLinkedin } from 'react-icons/fa';
 
 const commonClassIcons = {
   size: 16,
-  className: 'text-stone-500 dark:text-neutral-400',
+  className: 'text-slate-gray dark:text-gray-medium',
 };
 const footerData = [
   {
@@ -27,7 +27,7 @@ export const Footer = () => {
     return footerData.map((footer, idx) => (
       <li className='mr-2' key={idx}>
         <a
-          className='cursor-pointer dark:text-neutral-400'
+          className='cursor-pointer dark:text-gray-medium'
           href={footer.url}
           target='_blank'
           rel='noopener noreferrer'

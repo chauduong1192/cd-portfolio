@@ -1,5 +1,9 @@
+const path = require('path');
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // Configure `pageExtensions` to include markdown and MDX files
+  pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
   eslint: {
     dirs: ['src'],
   },
@@ -8,14 +12,14 @@ const nextConfig = {
   swcMinify: true,
 
   // Uncoment to add domain whitelist
-  // images: {
-  //   remotePatterns: [
-  //     {
-  //       protocol: 'https',
-  //       hostname: 'res.cloudinary.com',
-  //     },
-  //   ]
-  // },
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'images.ctfassets.net',
+      },
+    ],
+  },
 
   webpack(config) {
     // Grab the existing rule that handles SVG imports
@@ -50,4 +54,10 @@ const nextConfig = {
   },
 };
 
-module.exports = nextConfig;
+// Hot reload markdown files
+const withRemoteRefresh = require('next-remote-refresh')({
+  // Configure your Next.js project to watch the files you want to refresh
+  paths: [path.resolve(__dirname, 'src', 'markdown')],
+});
+
+module.exports = withRemoteRefresh(nextConfig);

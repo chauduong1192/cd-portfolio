@@ -11,7 +11,7 @@ export const Education = ({ education }: EducationProps) => (
     <ul>
       {education.map((edu) => (
         <li key={edu}>
-          <div className='dark:text-neutral-400'>{edu}</div>
+          <div className='dark:text-gray-medium'>{edu}</div>
         </li>
       ))}
     </ul>

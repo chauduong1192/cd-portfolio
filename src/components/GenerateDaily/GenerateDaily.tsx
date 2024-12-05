@@ -73,8 +73,6 @@ export const GenerateDaily = ({ repos }: GenerateDailyProps) => {
     resolver: yupResolver(schema),
   });
 
-  console.log('getValues().password', getValues().password);
-
   const {
     data: verifyPasswordData,
     mutate: verifyPasswordMutation,

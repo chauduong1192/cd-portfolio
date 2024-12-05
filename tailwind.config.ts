@@ -4,7 +4,7 @@ import { fontFamily } from 'tailwindcss/defaultTheme';
 
 export default withTV({
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
-  darkMode: 'class',
+  darkMode: ['class'],
   theme: {
     extend: {
       fontFamily: {
@@ -36,8 +36,13 @@ export default withTV({
       },
       keyframes: {
         meteor: {
-          '0%': { transform: 'rotate(215deg) translateX(0)', opacity: '1' },
-          '70%': { opacity: '1' },
+          '0%': {
+            transform: 'rotate(215deg) translateX(0)',
+            opacity: '1',
+          },
+          '70%': {
+            opacity: '1',
+          },
           '100%': {
             transform: 'rotate(215deg) translateX(-500px)',
             opacity: '0',
@@ -46,5 +51,5 @@ export default withTV({
       },
     },
   },
-  plugins: [require('@tailwindcss/typography')],
+  plugins: [require('@tailwindcss/typography'), require('tailwindcss-animate')],
 }) satisfies Config;

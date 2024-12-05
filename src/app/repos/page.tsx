@@ -2,48 +2,35 @@ import { Card } from '@/components/Card';
 import { Container } from '@/components/Container';
 import { HeadingSection } from '@/components/HeadingSection';
 
-import { GithubRepo } from '@/types';
+import { getRepos } from '@/services/github/getRepos';
 
 export const metadata = {
   title: 'Github repositories',
 };
 
-async function getPosts() {
-  const res = await fetch(
-    `${process.env.API_URL ?? 'http://localhost:3000'}/api/repos`,
-    {
-      cache: 'force-cache', // Ensure fresh data on each request
-    },
-  );
-
-  if (!res.ok) {
-    // This will activate the closest `error.js` Error Boundary
-    throw new Error('Failed to fetch data');
-  }
-
-  return res.json();
-}
-
 export default async function GithubRepositories() {
-  const posts: GithubRepo[] = await getPosts();
+  const { data: repos } = await getRepos();
 
   const renderGitHubList = () => {
-    if (!posts) {
+    if (!repos) {
       return <div>Loading...</div>;
     }
-    return posts
-      .sort((a, b) => b.stargazers_count - a.stargazers_count)
-      .filter((post) => post.fork === false)
-      ?.map(({ html_url, name, description, topics, stargazers_count }) => (
-        <Card
-          key={name}
-          href={html_url}
-          name={name}
-          description={description}
-          tags={topics.slice(0, 3)}
-          count={stargazers_count}
-        />
-      ));
+    return (
+      repos?.length > 0 &&
+      repos
+        .sort((a, b) => b.stargazers_count - a.stargazers_count)
+        .filter((post) => post.fork === false)
+        ?.map(({ html_url, name, description, topics, stargazers_count }) => (
+          <Card
+            key={name}
+            href={html_url}
+            name={name}
+            description={description}
+            tags={topics.slice(0, 3)}
+            count={stargazers_count}
+          />
+        ))
+    );
   };
   return (
     <Container>

@@ -1,6 +1,6 @@
 'use client';
 
-import * as React from 'react';
+import { ComponentPropsWithRef, useRef, useState } from 'react';
 import { BiCheck, BiCopy } from 'react-icons/bi';
 
 import useCopyToClipboard from '@/hooks/useCopyToClipboard';
@@ -11,10 +11,10 @@ export function Pre({
   className,
   children,
   ...rest
-}: React.ComponentPropsWithRef<'pre'>) {
-  const preRef = React.useRef<HTMLPreElement>(null);
+}: ComponentPropsWithRef<'pre'>) {
+  const preRef = useRef<HTMLPreElement>(null);
 
-  const [isCopied, setIsCopied] = React.useState<boolean>(false);
+  const [isCopied, setIsCopied] = useState<boolean>(false);
 
   const [copy] = useCopyToClipboard();
 

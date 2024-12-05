@@ -1,0 +1,47 @@
+{"level":"\u001b[32minfo\u001b[39m","message":{"method":"GET","responseTime":"4.25ms","status":404,"url":"http://localhost:3000/api/repos-with-username"},"timestamp":"2024-12-05 12:45:48"}
+{"level":"\u001b[32minfo\u001b[39m","message":{"method":"GET","responseTime":"774.44ms","status":200,"url":"http://localhost:3000/api/github/repos"},"timestamp":"2024-12-05 12:45:49"}
+{"level":"\u001b[32minfo\u001b[39m","message":{"method":"GET","responseTime":"0.72ms","status":404,"url":"http://localhost:3000/api/repos-with-username"},"timestamp":"2024-12-05 12:45:58"}
+{"level":"\u001b[32minfo\u001b[39m","message":{"method":"GET","responseTime":"0.26ms","status":404,"url":"http://localhost:3000/api/repos-with-username"},"timestamp":"2024-12-05 12:46:16"}
+{"level":"\u001b[32minfo\u001b[39m","message":{"method":"GET","responseTime":"0.45ms","status":404,"url":"http://localhost:3000/api/repos-with-username"},"timestamp":"2024-12-05 12:46:23"}
+{"level":"\u001b[32minfo\u001b[39m","message":{"method":"GET","responseTime":"0.32ms","status":404,"url":"http://localhost:3000/api/repos-with-username"},"timestamp":"2024-12-05 12:46:27"}
+{"level":"\u001b[32minfo\u001b[39m","message":{"method":"GET","responseTime":"786.61ms","status":200,"url":"http://localhost:3000/api/github/repos"},"timestamp":"2024-12-05 13:18:18"}
+{"level":"\u001b[32minfo\u001b[39m","message":{"method":"GET","responseTime":"489.91ms","status":200,"url":"http://localhost:3000/api/github/repos"},"timestamp":"2024-12-05 13:20:51"}
+{"level":"\u001b[32minfo\u001b[39m","message":{"method":"GET","responseTime":"495.69ms","status":200,"url":"http://localhost:3000/api/github/repos"},"timestamp":"2024-12-05 13:24:41"}
+{"level":"\u001b[32minfo\u001b[39m","message":{"method":"GET","responseTime":"493.17ms","status":200,"url":"http://localhost:3000/api/github/repos"},"timestamp":"2024-12-05 13:26:20"}
+{"level":"\u001b[32minfo\u001b[39m","message":{"method":"GET","responseTime":"529.32ms","url":"http://localhost:3000/api/github/repos"},"timestamp":"2024-12-05 13:31:31"}
+{"error":{},"level":"\u001b[31merror\u001b[39m","message":"An error occurred: Cannot read properties of undefined (reading 'set')","timestamp":"2024-12-05 13:31:31"}
+{"error":{},"level":"\u001b[31merror\u001b[39m","message":"An error occurred: Cannot read properties of undefined (reading 'forEach')","timestamp":"2024-12-05 13:31:31"}
+{"error":{},"level":"\u001b[31merror\u001b[39m","message":"An error occurred: Cannot read properties of undefined (reading 'forEach')","timestamp":"2024-12-05 13:31:31"}
+{"error":{},"level":"\u001b[31merror\u001b[39m","message":"An error occurred: Cannot read properties of undefined (reading 'forEach')","timestamp":"2024-12-05 13:31:31"}
+{"error":{},"level":"\u001b[31merror\u001b[39m","message":"An error occurred: Cannot read properties of undefined (reading 'forEach')","timestamp":"2024-12-05 13:31:31"}
+{"error":{},"level":"\u001b[31merror\u001b[39m","message":"An error occurred: Cannot read properties of undefined (reading 'forEach')","timestamp":"2024-12-05 13:31:31"}
+{"level":"\u001b[32minfo\u001b[39m","message":{"method":"GET","responseTime":"150.22ms","url":"http://localhost:3000/api/github/repos"},"timestamp":"2024-12-05 13:31:50"}
+{"error":{},"level":"\u001b[31merror\u001b[39m","message":"An error occurred: Cannot read properties of undefined (reading 'set')","timestamp":"2024-12-05 13:31:50"}
+{"error":{},"level":"\u001b[31merror\u001b[39m","message":"An error occurred: Cannot read properties of undefined (reading 'forEach')","timestamp":"2024-12-05 13:31:50"}
+{"error":{},"level":"\u001b[31merror\u001b[39m","message":"An error occurred: Cannot read properties of undefined (reading 'forEach')","timestamp":"2024-12-05 13:31:50"}
+{"error":{},"level":"\u001b[31merror\u001b[39m","message":"An error occurred: Cannot read properties of undefined (reading 'forEach')","timestamp":"2024-12-05 13:31:50"}
+{"error":{},"level":"\u001b[31merror\u001b[39m","message":"An error occurred: Cannot read properties of undefined (reading 'forEach')","timestamp":"2024-12-05 13:31:50"}
+{"error":{},"level":"\u001b[31merror\u001b[39m","message":"An error occurred: Cannot read properties of undefined (reading 'forEach')","timestamp":"2024-12-05 13:31:50"}
+{"level":"\u001b[32minfo\u001b[39m","message":{"method":"GET","responseTime":"493.30ms","status":200,"url":"http://localhost:3000/api/github/repos"},"timestamp":"2024-12-05 13:32:29"}
+{"level":"\u001b[32minfo\u001b[39m","message":{"method":"GET","responseTime":"467.49ms","status":200,"url":"http://localhost:3000/api/github/repos"},"timestamp":"2024-12-05 13:33:37"}
+{"level":"\u001b[32minfo\u001b[39m","message":{"method":"GET","responseTime":"484.63ms","status":200,"url":"http://localhost:3000/api/github/repos"},"timestamp":"2024-12-05 13:35:08"}
+{"level":"\u001b[32minfo\u001b[39m","message":{"method":"GET","responseTime":"549.82ms","status":200,"url":"http://localhost:3000/api/github/repos"},"timestamp":"2024-12-05 13:35:41"}
+{"level":"\u001b[32minfo\u001b[39m","message":{"method":"GET","responseTime":"534.68ms","status":200,"url":"http://localhost:3000/api/github/repos"},"timestamp":"2024-12-05 13:36:06"}
+{"level":"\u001b[32minfo\u001b[39m","message":{"method":"GET","responseTime":"334.95ms","status":200,"url":"http://localhost:3000/api/github/repos-with-username"},"timestamp":"2024-12-05 13:59:01"}
+{"level":"\u001b[32minfo\u001b[39m","message":{"method":"GET","responseTime":"465.23ms","status":200,"url":"http://localhost:3000/api/github/repos-with-username"},"timestamp":"2024-12-05 13:59:01"}
+{"level":"\u001b[32minfo\u001b[39m","message":{"method":"GET","responseTime":"746.25ms","status":200,"url":"http://localhost:3000/api/github/repos-with-username"},"timestamp":"2024-12-05 14:01:14"}
+{"level":"\u001b[32minfo\u001b[39m","message":{"method":"GET","responseTime":"697.72ms","status":200,"url":"http://localhost:3000/api/github/repos-with-username"},"timestamp":"2024-12-05 14:02:23"}
+{"level":"\u001b[32minfo\u001b[39m","message":{"method":"GET","responseTime":"477.76ms","status":200,"url":"http://localhost:3000/api/github/branches?full_name=airfoil-frontend%2Fairfoil-mono"},"timestamp":"2024-12-05 14:02:28"}
+{"level":"\u001b[32minfo\u001b[39m","message":{"method":"GET","responseTime":"454.14ms","status":200,"url":"http://localhost:3000/api/github/branches?full_name=airfoil-frontend%2Fairfoil-mono"},"timestamp":"2024-12-05 14:03:05"}
+{"level":"\u001b[32minfo\u001b[39m","message":{"method":"GET","responseTime":"631.11ms","status":200,"url":"http://localhost:3000/api/github/repos-with-username"},"timestamp":"2024-12-05 14:03:47"}
+{"level":"\u001b[32minfo\u001b[39m","message":{"method":"GET","responseTime":"331.11ms","status":200,"url":"http://localhost:3000/api/github/branches?full_name=airfoil-frontend%2Fairfoil-mono"},"timestamp":"2024-12-05 14:03:49"}
+{"level":"\u001b[32minfo\u001b[39m","message":{"method":"GET","responseTime":"726.58ms","status":200,"url":"http://localhost:3000/api/github/repos-with-username"},"timestamp":"2024-12-05 14:04:04"}
+{"level":"\u001b[32minfo\u001b[39m","message":{"method":"GET","responseTime":"345.84ms","status":200,"url":"http://localhost:3000/api/github/branches?full_name=airfoil-frontend%2Fairfoil-mono"},"timestamp":"2024-12-05 14:04:07"}
+{"level":"\u001b[32minfo\u001b[39m","message":{"method":"GET","responseTime":"1841.78ms","status":200,"url":"http://localhost:3000/api/github/repos-with-username"},"timestamp":"2024-12-05 14:05:01"}
+{"level":"\u001b[32minfo\u001b[39m","message":{"method":"GET","responseTime":"711.73ms","status":200,"url":"http://localhost:3000/api/github/repos-with-username"},"timestamp":"2024-12-05 14:05:36"}
+{"level":"\u001b[32minfo\u001b[39m","message":{"method":"GET","responseTime":"367.73ms","status":200,"url":"http://localhost:3000/api/github/branches?full_name=airfoil-frontend%2Fairfoil-mono"},"timestamp":"2024-12-05 14:05:40"}
+{"level":"\u001b[32minfo\u001b[39m","message":{"method":"GET","responseTime":"493.51ms","status":200,"url":"http://localhost:3000/api/github/branches?full_name=airfoil-frontend%2Fairfoil-mono"},"timestamp":"2024-12-05 14:06:52"}
+{"level":"\u001b[32minfo\u001b[39m","message":{"method":"GET","responseTime":"2166.73ms","status":200,"url":"http://localhost:3000/api/github/commits-with-branch?full_name=airfoil-frontend%2Fairfoil-mono&sha=andrel%2Feng-2129-client-success-project-blanket-ticket&until="},"timestamp":"2024-12-05 14:07:55"}
+{"level":"\u001b[32minfo\u001b[39m","message":{"method":"GET","responseTime":"439.55ms","status":200,"url":"http://localhost:3000/api/github/branches?full_name=airfoil-frontend%2Fairfoil-mono"},"timestamp":"2024-12-05 14:08:57"}
+{"level":"\u001b[32minfo\u001b[39m","message":{"method":"GET","responseTime":"1247.40ms","status":200,"url":"http://localhost:3000/api/github/commits-with-branch?full_name=airfoil-frontend%2Fairfoil-mono&sha=andrel%2Feng-2129-client-success-project-blanket-ticket&until="},"timestamp":"2024-12-05 14:08:59"}
+{"level":"\u001b[32minfo\u001b[39m","message":{"method":"GET","responseTime":"1163.35ms","status":200,"url":"http://localhost:3000/api/github/commits-with-branch?full_name=airfoil-frontend%2Fairfoil-mono&sha=andrel%2Feng-2129-client-success-project-blanket-ticket&until=2024-12-10T17%3A00%3A00.000Z"},"timestamp":"2024-12-05 14:09:02"}

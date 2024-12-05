@@ -1,47 +1,44 @@
 import { Hono } from 'hono';
-import { cache } from 'hono/cache';
+import { etag } from 'hono/etag';
+import { logger as HonoLogger } from 'hono/logger';
+import { prettyJSON } from 'hono/pretty-json';
+import { secureHeaders } from 'hono/secure-headers';
 import { handle } from 'hono/vercel';
+import { StatusCodes } from 'http-status-codes';
 
-import { GithubRepo } from '@/types';
+import { githubApi } from '@/app/api/[...route]/github';
+import { formatResponse } from '@/app/api/helpers/response';
+import { errorHandlers } from '@/app/api/middlewares/error.middleware';
+import { loggerMiddleware } from '@/app/api/middlewares/logger.middleware';
 
 const app = new Hono().basePath('/api');
 
-const cacheMiddleware = cache({
-  cacheName: 'my-repos',
-  cacheControl: 'max-age=3600',
-});
+/**
+ * Middlewares
+ */
+app.use('*', prettyJSON());
+app.use('*', etag());
+app.use('*', secureHeaders());
+app.use('*', HonoLogger());
 
-// @typescript-eslint/no-explicit-any
-// Common function to fetch data and handle errors
-async function fetchData<T>(fetchFn: () => Promise<T>, c: any) {
-  try {
-    const data = await fetchFn();
-    return c.json(data);
-  } catch (error) {
-    return c.json(
-      { error: 'Error fetching data: ' + (error as Error).message },
-      500,
-    );
-  }
-}
+/**
+ * Error handlers
+ */
+app.notFound((c) =>
+  formatResponse(c, StatusCodes.NOT_FOUND, { message: 'Not found' }),
+);
+app.onError((error, c) => errorHandlers(error, c));
 
-// Fetch GitHub repositories
-app.get('/repos', (c) => {
-  return fetchData(async () => {
-    const response = await fetch(
-      'https://api.github.com/users/chauduong1192/repos',
-    );
+/**
+ * Custom middlewares
+ */
+app.use('*', loggerMiddleware);
 
-    if (!response.ok) {
-      throw new Error('Failed to fetch data from GitHub');
-    }
+/**
+ * Routes
+ */
+const routes = app.route('/github', githubApi);
 
-    return response.json() as Promise<GithubRepo>;
-  }, c);
-});
-
-if (typeof caches !== 'undefined') {
-  app.use('/repos', cacheMiddleware);
-}
-
+export type AppType = typeof routes;
 export const GET = handle(app);
+export const POST = handle(app);

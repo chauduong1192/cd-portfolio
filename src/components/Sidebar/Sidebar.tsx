@@ -16,6 +16,10 @@ const menuData = [
     href: '/about-me',
   },
   {
+    name: 'Generate daily',
+    href: '/generate-daily',
+  },
+  {
     name: 'Repos',
     href: '/repos',
   },

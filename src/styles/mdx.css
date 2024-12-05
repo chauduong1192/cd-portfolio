@@ -97,7 +97,7 @@
 }
 
 .mdx.prose :where(h1, h2) {
-  @apply mb-4 mt-16;
+  @apply mb-4 mt-0;
 }
 .mdx.prose :where(h3, h4, h5, h6) {
   @apply mb-3;

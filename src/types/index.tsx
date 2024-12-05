@@ -18,16 +18,6 @@ export type WorkExperience = {
   logo?: string;
 };
 
-export interface GithubRepo {
-  id: number;
-  name: string;
-  html_url: string;
-  description: string;
-  stargazers_count: number;
-  topics: string[];
-  fork: boolean;
-}
-
 export type Short = {
   title: string;
   subTitle: string;
@@ -42,3 +32,44 @@ export type ShortBySlug = {
   meta: Short;
   content: string;
 };
+
+// GIT HUB TYPES
+export interface GithubRepo {
+  id: number;
+  name: string;
+  html_url: string;
+  description: string;
+  stargazers_count: number;
+  topics: string[];
+  fork: boolean;
+  owner: {
+    login: string;
+  };
+  private: boolean;
+  full_name: string;
+}
+export interface GithubRepo {
+  id: number;
+  name: string;
+  html_url: string;
+  description: string;
+  stargazers_count: number;
+  topics: string[];
+  fork: boolean;
+  owner: {
+    login: string;
+  };
+  private: boolean;
+  full_name: string;
+}
+
+export interface GithubBranch {
+  name: string;
+  commit: Commit;
+  protected: boolean;
+}
+
+export interface Commit {
+  sha: string;
+  url: string;
+}

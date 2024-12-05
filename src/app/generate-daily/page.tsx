@@ -8,6 +8,8 @@ export const metadata = {
   title: 'Github repositories',
 };
 
+export const dynamic = 'force-dynamic';
+
 export default async function GenerateDaily() {
   const { data } = await getReposByUser();
 

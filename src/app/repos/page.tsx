@@ -8,8 +8,14 @@ export const metadata = {
   title: 'Github repositories',
 };
 
+export const dynamic = 'force-dynamic';
+
 export default async function GithubRepositories() {
   const { data: repos } = await getRepos();
+
+  if (!repos) {
+    return null;
+  }
 
   const renderGitHubList = () => {
     if (!repos) {

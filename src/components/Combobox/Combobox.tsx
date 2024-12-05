@@ -1,6 +1,6 @@
 'use client';
 
-import { Check, ChevronsUpDown } from 'lucide-react';
+import { Check, ChevronsUpDown, LoaderCircle } from 'lucide-react';
 import * as React from 'react';
 
 import { Button } from '@/components/ui/button';
@@ -28,9 +28,14 @@ export type Option = {
 export type ComboboxProps = {
   options: Option[];
   onChange: (value: string) => void;
+  isLoading?: boolean;
 };
 
-export const Combobox = ({ options, onChange }: ComboboxProps) => {
+export const Combobox = ({
+  options,
+  onChange,
+  isLoading = false,
+}: ComboboxProps) => {
   const [open, setOpen] = React.useState(false);
   const [value, setValue] = React.useState('');
 
@@ -38,17 +43,21 @@ export const Combobox = ({ options, onChange }: ComboboxProps) => {
     <Popover open={open} onOpenChange={setOpen}>
       <PopoverTrigger asChild>
         <Button
-          variant='outline'
+          variant='default'
           role='combobox'
           aria-expanded={open}
-          className='w-full justify-between border-gray-light text-gray-dark truncate bg-white'
+          className='w-full justify-between'
         >
           <div className='truncate w-full text-left'>
             {value
               ? options.find((option) => option.value === value)?.label
               : 'Select framework...'}
           </div>
-          <ChevronsUpDown className='opacity-50 text-gray-dark' />
+          {isLoading ? (
+            <LoaderCircle className='animate-spin' />
+          ) : (
+            <ChevronsUpDown className='opacity-50 text-gray-dark' />
+          )}
         </Button>
       </PopoverTrigger>
       <PopoverContent className='w-full p-0' align='start'>

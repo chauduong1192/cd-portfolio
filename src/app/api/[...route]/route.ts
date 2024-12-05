@@ -6,6 +6,7 @@ import { secureHeaders } from 'hono/secure-headers';
 import { handle } from 'hono/vercel';
 import { StatusCodes } from 'http-status-codes';
 
+import { verifyPassword } from '@/app/api/[...route]/auth';
 import { githubApi } from '@/app/api/[...route]/github';
 import { formatResponse } from '@/app/api/helpers/response';
 import { errorHandlers } from '@/app/api/middlewares/error.middleware';
@@ -37,7 +38,7 @@ app.use('*', loggerMiddleware);
 /**
  * Routes
  */
-const routes = app.route('/github', githubApi);
+const routes = app.route('/github', githubApi).route('/auth', verifyPassword);
 
 export type AppType = typeof routes;
 export const GET = handle(app);

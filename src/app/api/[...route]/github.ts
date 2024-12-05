@@ -4,6 +4,7 @@ import { StatusCodes } from 'http-status-codes';
 
 import { Env } from '@/app/api/configs/env';
 import { formatResponse } from '@/app/api/helpers/response';
+import { GithubCommit } from '@/types';
 
 const { GITHUB_URL, GITHUB_USERNAME, GITHUB_TOKEN, GENIMI_API_KEY } = Env;
 const genAI = new GoogleGenerativeAI(GENIMI_API_KEY as string);
@@ -42,7 +43,7 @@ const githubApi = new Hono()
   })
   .get('/branches', async (c) => {
     try {
-      const fullName = c.req.query('full_name') || 'full_name';
+      const fullName = c.req.query('full_name');
       const response = await fetch(
         `${GITHUB_URL}/repos/${fullName}/branches?per_page=100`,
         {
@@ -74,11 +75,20 @@ const githubApi = new Hono()
         },
       );
       const newCommits = await response.json();
+
+      const commits = newCommits.map(
+        (commit: GithubCommit) => commit.commit.message,
+      );
+
+      if (commits.length === 0) {
+        return formatResponse(c, StatusCodes.OK, {
+          data: 'No commits found. Please try again with different branch and date.',
+        });
+      }
+
       const model = genAI.getGenerativeModel({
         model: 'gemini-1.5-flash',
       });
-
-      const commits = newCommits.map((commit: any) => commit.commit.message);
 
       const prompt = `
         Here are the commits:

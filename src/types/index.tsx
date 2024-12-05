@@ -65,11 +65,16 @@ export interface GithubRepo {
 
 export interface GithubBranch {
   name: string;
-  commit: Commit;
+  commit: {
+    sha: string;
+    url: string;
+  };
   protected: boolean;
 }
 
-export interface Commit {
+export interface GithubCommit {
   sha: string;
-  url: string;
+  commit: {
+    message: string;
+  };
 }

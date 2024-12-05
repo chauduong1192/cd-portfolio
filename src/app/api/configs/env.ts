@@ -10,6 +10,7 @@ export class Env {
   static readonly GITHUB_USERNAME = process.env.GITHUB_USERNAME;
   static readonly GITHUB_TOKEN = process.env.GITHUB_TOKEN;
   static readonly GENIMI_API_KEY = process.env.GENIMI_API_KEY;
+  static readonly GENERATE_PASSWORD = process.env.GENERATE_PASSWORD;
 
   static isDevelopment(): boolean {
     return this.NODE_ENV === 'development';

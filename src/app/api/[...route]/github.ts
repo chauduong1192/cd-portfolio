@@ -4,6 +4,7 @@ import { StatusCodes } from 'http-status-codes';
 
 import { Env } from '@/app/api/configs/env';
 import { formatResponse } from '@/app/api/helpers/response';
+
 import { GithubCommit } from '@/types';
 
 const { GITHUB_URL, GITHUB_USERNAME, GITHUB_TOKEN, GENIMI_API_KEY } = Env;

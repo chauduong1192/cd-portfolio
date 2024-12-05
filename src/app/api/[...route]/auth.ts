@@ -1,7 +1,8 @@
-import { Env } from '@/app/api/configs/env';
-import { formatResponse } from '@/app/api/helpers/response';
 import { Hono } from 'hono';
 import { StatusCodes } from 'http-status-codes';
+
+import { Env } from '@/app/api/configs/env';
+import { formatResponse } from '@/app/api/helpers/response';
 
 const { GENERATE_PASSWORD } = Env;
 const unlockPassword = GENERATE_PASSWORD;

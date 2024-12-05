@@ -1,25 +1,24 @@
 'use client';
 
+import { yupResolver } from '@hookform/resolvers/yup';
 import { useMutation, useQuery } from '@tanstack/react-query';
 import { ComponentPropsWithRef, useEffect, useRef, useState } from 'react';
+import { useForm } from 'react-hook-form';
+import * as yup from 'yup';
 
 import useCopyToClipboard from '@/hooks/useCopyToClipboard';
 
 import { Combobox } from '@/components/Combobox';
 import { DatePicker } from '@/components/DatePicker';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
 
+import { verifyPassword } from '@/services/auth/verifyPassword';
 import { getBranches } from '@/services/github/getBranches';
 import { getCommitsByBranch } from '@/services/github/getCommitsByBranch';
 import { cn } from '@/utils/classnames';
 
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
 import { GithubRepo } from '@/types';
-
-import { verifyPassword } from '@/services/auth/verifyPassword';
-import { yupResolver } from '@hookform/resolvers/yup';
-import { useForm } from 'react-hook-form';
-import * as yup from 'yup';
 
 export type GenerateDailyProps = ComponentPropsWithRef<'div'> & {
   repos: GithubRepo[] | undefined;
@@ -80,7 +79,6 @@ export const GenerateDaily = ({ repos }: GenerateDailyProps) => {
     data: verifyPasswordData,
     mutate: verifyPasswordMutation,
     isPending: isVerifyingPassword,
-    error: verifyPasswordError,
     isError: isVerifyPasswordError,
   } = useMutation({
     mutationKey: ['verify-password'],
@@ -116,7 +114,7 @@ export const GenerateDaily = ({ repos }: GenerateDailyProps) => {
         message: 'Invalid password',
       });
     }
-  }, [isVerifyPasswordError]);
+  }, [isVerifyPasswordError, setError]);
 
   const onSubmit = () => {
     verifyPasswordMutation();

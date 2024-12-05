@@ -15,8 +15,8 @@ module.exports = {
   rules: {
     '@typescript-eslint/no-explicit-any': 'off',
     'no-unused-vars': 'off',
-    'no-console': 'warn',
-    'no-useless-catch': 'warn',
+    'no-console': 'off',
+    'no-useless-catch': 'off',
     '@typescript-eslint/explicit-module-boundary-types': 'off',
     'react/no-unescaped-entities': 'off',
 

@@ -10,6 +10,8 @@ const makeQueryClient = (config?: QueryClientConfig) => {
     defaultOptions: {
       queries: {
         staleTime: 60 * 1000, // Cache remains fresh for 1 minute
+        refetchOnMount: false,
+        refetchOnWindowFocus: false, // prevent refetch on window focus
       },
     },
   });

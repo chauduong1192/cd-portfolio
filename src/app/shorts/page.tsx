@@ -16,9 +16,9 @@ export default async function ShortsPage() {
   return (
     <Container subTitle='Showcase of my shorts'>
       <HeadingSection
-        headingText='Github repositories'
-        title='My open-source projects'
-        description="Here's a list of my open-source projects hosted on GitHub."
+        headingText='Welcome to my shorts'
+        title='Shorts'
+        description="Here's a collection of my shorts. Shorts are small projects that I've worked on."
         withHr={true}
         className='gap-0'
       >

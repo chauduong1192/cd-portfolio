@@ -8,6 +8,7 @@ import '@/styles/mdx.css';
 import { CoreLayout } from '@/components/CoreLayout';
 
 import Providers from '@/app/providers';
+import { Toaster } from '@/components/ui/toaster';
 import { siteConfig } from '@/constant/config';
 
 const robotoMono = localFont({
@@ -99,6 +100,7 @@ export default function RootLayout({
       className={`${robotoMono.variable} ${rubik.variable}`}
     >
       <body>
+        <Toaster />
         <Providers>
           <CoreLayout>{children}</CoreLayout>
         </Providers>

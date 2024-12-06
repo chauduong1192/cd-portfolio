@@ -40,25 +40,22 @@ export const GenerateDaily = ({ repos }: GenerateDailyProps) => {
   const [isVerified, setVerified] = useState<boolean>(false);
 
   const { data: branchesQuery, isLoading: branchesLoading } = useQuery({
-    queryKey: ['branches', repoSelected],
+    queryKey: ['get-branches', repoSelected],
     queryFn: () => getBranches(repoSelected),
     enabled: !!repoSelected,
+    retry: false,
   });
 
   const { data: commitsQuery, isLoading: commitsLoading } = useQuery({
-    queryKey: [
-      'commits',
-      dateSelected?.toISOString(),
-      repoSelected,
-      branchSelected,
-    ],
+    queryKey: ['get-commits', branchSelected, dateSelected?.toISOString()],
     queryFn: async () =>
       getCommitsByBranch({
         full_name: repoSelected,
         sha: branchSelected,
         until: dateSelected?.toISOString() ?? '',
       }),
-    enabled: !!branchSelected,
+    enabled: !!repoSelected && !!branchSelected && !!dateSelected,
+    retry: false,
   });
 
   const [copy] = useCopyToClipboard();

@@ -5,7 +5,7 @@ import { StatusCodes } from 'http-status-codes';
 import { Env } from '@/app/api/configs/env';
 import { formatResponse } from '@/app/api/helpers/response';
 
-import { GithubCommit } from '@/types';
+import { GithubBranch, GithubCommit } from '@/types';
 
 const { GITHUB_URL, GITHUB_USERNAME, GITHUB_TOKEN, GENIMI_API_KEY } = Env;
 const genAI = new GoogleGenerativeAI(GENIMI_API_KEY as string);
@@ -54,8 +54,16 @@ const githubApi = new Hono()
         },
       );
       const newResponse = await response.json();
+      const formatRes = newResponse.filter((branch: GithubBranch) =>
+        branch.name.startsWith('chaud/'),
+      );
+      if (formatRes.length === 0) {
+        throw new Error(
+          'No branches found. Please try again with different repo.',
+        );
+      }
       return formatResponse(c, StatusCodes.OK, {
-        data: newResponse,
+        data: formatRes,
       });
     } catch (error) {
       throw error;

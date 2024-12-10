@@ -11,7 +11,7 @@ const verifyPassword = new Hono().post('/verify-password', async (c) => {
   const { password } = await c.req.json();
   const isMatch = password === unlockPassword;
   if (!isMatch) {
-    return formatResponse(c, StatusCodes.UNAUTHORIZED, {
+    return formatResponse(c, StatusCodes.BAD_REQUEST, {
       message: 'Password is incorrect',
     });
   }

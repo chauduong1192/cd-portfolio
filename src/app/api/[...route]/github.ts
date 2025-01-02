@@ -5,7 +5,7 @@ import { StatusCodes } from 'http-status-codes';
 import { Env } from '@/app/api/configs/env';
 import { formatResponse } from '@/app/api/helpers/response';
 
-import { GithubBranch, GithubCommit } from '@/types';
+import { GithubCommit } from '@/types';
 
 const { GITHUB_URL, GITHUB_USERNAME, GITHUB_TOKEN, GENIMI_API_KEY } = Env;
 const genAI = new GoogleGenerativeAI(GENIMI_API_KEY as string);
@@ -27,7 +27,7 @@ const githubApi = new Hono()
   .get('/repos-with-username', async (c) => {
     try {
       const response = await fetch(
-        `${GITHUB_URL}/user/repos?type=private&sort=pushed&per_page=10&direction=desc`,
+        `${GITHUB_URL}/user/repos?type=private&sort=pushed&per_page=50&direction=desc`,
         {
           headers: {
             Authorization: `Bearer ${GITHUB_TOKEN}`,
@@ -54,16 +54,8 @@ const githubApi = new Hono()
         },
       );
       const newResponse = await response.json();
-      const formatRes = newResponse.filter((branch: GithubBranch) =>
-        branch.name.startsWith('chaud/'),
-      );
-      if (formatRes.length === 0) {
-        throw new Error(
-          'No branches found. Please try again with different repo.',
-        );
-      }
       return formatResponse(c, StatusCodes.OK, {
-        data: formatRes,
+        data: newResponse,
       });
     } catch (error) {
       throw error;

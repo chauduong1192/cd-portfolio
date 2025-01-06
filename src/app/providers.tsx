@@ -2,8 +2,8 @@
 
 import { QueryCache, QueryClientProvider } from '@tanstack/react-query';
 
-import { useToast } from '@/hooks/use-toast';
 import { getQueryClient } from '@/lib/react-query/query-client';
+import { useToast } from '@/hooks/use-toast';
 
 export default function Providers({ children }: { children: React.ReactNode }) {
   // NOTE: Avoid useState when initializing the query client if you don't

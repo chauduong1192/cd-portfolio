@@ -1,10 +1,11 @@
 'use client';
 
-import { cn } from '@/utils/classnames';
 import * as ToastPrimitives from '@radix-ui/react-toast';
-import { cva, type VariantProps } from 'class-variance-authority';
+import { type VariantProps, cva } from 'class-variance-authority';
 import { X } from 'lucide-react';
 import * as React from 'react';
+
+import { cn } from '@/utils/classnames';
 
 const ToastProvider = ToastPrimitives.Provider;
 
@@ -129,6 +130,8 @@ type ToastProps = React.ComponentPropsWithoutRef<typeof Toast>;
 type ToastActionElement = React.ReactElement<typeof ToastAction>;
 
 export {
+  type ToastActionElement,
+  type ToastProps,
   Toast,
   ToastAction,
   ToastClose,
@@ -136,6 +139,4 @@ export {
   ToastProvider,
   ToastTitle,
   ToastViewport,
-  type ToastActionElement,
-  type ToastProps,
 };

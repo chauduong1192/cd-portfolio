@@ -6,9 +6,9 @@ import '@/styles/globals.css';
 import '@/styles/mdx.css';
 
 import { CoreLayout } from '@/components/CoreLayout';
+import { Toaster } from '@/components/ui/toaster';
 
 import Providers from '@/app/providers';
-import { Toaster } from '@/components/ui/toaster';
 import { siteConfig } from '@/constant/config';
 
 const robotoMono = localFont({
